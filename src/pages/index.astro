@@ -1,0 +1,119 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Icon from '../components/Icon.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { staticPages } from '../lib/pages';
+import { faqPage, softwareApplication } from '../lib/schema';
+import { usps, steps } from '../lib/usp';
+import { latestRun } from '../lib/benchmarks';
+
+const meta = staticPages.home;
+const faq = (await getEntry('faq', 'home'))!.data.items;
+const useCases = (await getCollection('useCases')).sort((a, b) => a.data.order - b.data.order);
+const competitors = (await getCollection('compare')).sort((a, b) => a.data.order - b.data.order);
+const answer =
+  'Obsess is an AI app builder for people who do not code. Describe your idea in plain words — English, Hinglish, Hindi or Banglish — and an AI agent plans, builds, checks, previews and publishes a working website, web app or Android app. It works from your phone, and you see the cost before every task.';
+const builds = [
+  { icon: 'globe', title: 'Websites', text: 'Business pages, menus, portfolios and landing pages.', href: '/features/ai-website-builder' },
+  { icon: 'app-window', title: 'Web apps', text: 'Interactive React apps: trackers, calculators, booking pages.', href: '/features/ai-web-app-builder' },
+  { icon: 'smartphone', title: 'Android apps', text: 'React Native + Expo apps in a phone-frame preview.', href: '/features/android-app-builder' },
+];
+const strip = latestRun.results.filter((r) => ['android-requirements', 'android-preview', 'publishing'].includes(r.id));
+---
+<Base
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  schema={[softwareApplication(meta.description), faqPage(faq)]}
+>
+  <section class="container-x pt-10 pb-12 md:pt-20">
+    <p class="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-sm text-muted">
+      <span class="h-2 w-2 rounded-full bg-accent" aria-hidden="true"></span> Invite-only Alpha
+    </p>
+    <h1 class="mt-5 max-w-4xl text-4xl font-extrabold md:text-6xl">
+      Build a website, web app or Android app by just describing it
+    </h1>
+    <p data-answer class="mt-6 max-w-3xl text-lg text-muted md:text-xl">{answer}</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="/invite" class="inline-flex items-center justify-center rounded-sm bg-accent px-6 py-3 font-semibold text-accent-contrast hover:bg-accent-hover">Request an invite</a>
+      <a href="/product" class="inline-flex items-center justify-center rounded-sm border border-line px-6 py-3 font-semibold hover:bg-surface">See how it works</a>
+    </div>
+    <figure class="mt-10 max-w-2xl rounded-md border border-line bg-surface p-4">
+      <figcaption class="text-xs font-semibold uppercase tracking-wide text-muted">Example request</figcaption>
+      <p class="mt-2 font-medium">“Mera eggs business hai, website banado.”</p>
+      <p class="mt-1 text-sm text-muted">“I have an eggs business, build me a website.”</p>
+    </figure>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="how">
+    <SectionHeader id="how" title="How does Obsess work?" intro="Three steps, all from one chat." />
+    <ol class="mt-8 grid gap-4 md:grid-cols-3">
+      {steps.map((s, i) => (
+        <li class="rounded-md border border-line p-5">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-accent-soft text-accent"><Icon name={s.icon} /></span>
+          <h3 class="mt-4 font-semibold">{i + 1}. {s.title}</h3>
+          <p class="mt-2 text-sm text-muted">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="what">
+    <SectionHeader id="what" title="What can I build with Obsess?" intro="Websites, web apps and Android apps — from the same chat." />
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      {builds.map((b) => <Card {...b} />)}
+    </div>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="why">
+    <SectionHeader id="why" title="Why is Obsess different?" intro="Seven reasons. Two are on the roadmap and are labelled." />
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {usps.map((u) => <li><Card icon={u.icon} title={u.title} text={u.text} comingSoon={u.roadmap} /></li>)}
+    </ul>
+    <p class="mt-6"><a href="/why-obsess" class="font-semibold text-accent underline underline-offset-2">Why Obsess, in detail</a></p>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="bench">
+    <div class="rounded-lg border border-line bg-surface p-6 md:p-8">
+      <SectionHeader id="bench" title="Does the AI actually build working apps?" intro={`Results from our ${latestRun.label}, ${latestRun.date}, model ${latestRun.model}. Small samples; see the method and limits.`} />
+      <dl class="mt-6 grid gap-6 sm:grid-cols-3">
+        {strip.map((r) => (
+          <div>
+            <dt class="text-sm text-muted">{r.title}</dt>
+            <dd class="mt-1 text-3xl font-extrabold">{r.headline}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-6"><a href="/benchmarks" class="font-semibold text-accent underline underline-offset-2">Method, results and limits</a></p>
+    </div>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="cmp">
+    <SectionHeader id="cmp" title="How does Obsess compare with other AI app builders?" intro="Factual tables with sources and dates. Where we could not verify a fact, we show a dash." />
+    <ul class="mt-6 flex flex-wrap gap-2">
+      {competitors.map((c) => (
+        <li><a href={`/compare/${c.id}`} class="inline-flex rounded-full border border-line px-4 py-2 text-sm font-medium hover:border-accent">Obsess vs {c.data.name}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="container-x py-12" aria-labelledby="uc">
+    <SectionHeader id="uc" title="Who uses Obsess?" intro="Small businesses, creators, students, founders and agencies." />
+    <ul class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-5">
+      {useCases.map((u) => (
+        <li>
+          <a href={`/use-cases/${u.id}`} class="flex items-center gap-2 rounded-md border border-line p-3 text-sm font-medium hover:border-accent">
+            <span class="text-accent"><Icon name={u.data.icon} /></span>{u.data.shortTitle}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <Faq items={faq} />
+  <Cta />
+</Base>

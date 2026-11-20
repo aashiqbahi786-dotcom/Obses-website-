@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { site } from '../config/site';
+
+const meta = staticPages.about;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
+  <PageHeader
+    title={`About ${site.name}`}
+    answer={`${site.name} exists so that anyone with an idea can build a working website or app without learning to code. Many people in India and beyond think and talk in Hinglish, Hindi or Banglish and do most things on a phone, so ${site.name} is built for that, first. We are in invite-only Alpha today.`}
+  />
+  <section class="container-x prose-o max-w-3xl py-4">
+    <h2>What are we building?</h2>
+    <p>An AI agent that plans, builds, checks, previews and publishes websites, web apps and Android apps from a plain description — and, on our roadmap, helps you own your app and find your first users.</p>
+    <h2>What do we believe?</h2>
+    <ul>
+      <li><strong>Your language, not ours.</strong> You should not have to translate your idea into tech English.</li>
+      <li><strong>Honesty over hype.</strong> We publish our <a href="/benchmarks">benchmarks</a> with their limits, label unfinished features “Coming soon”, and never show fake reviews or user counts.</li>
+      <li><strong>Clear cost.</strong> You see what a task will cost before it runs.</li>
+      <li><strong>Ownership.</strong> What you build should be yours. Export is on our roadmap.</li>
+    </ul>
+    <h2>How can I reach the team?</h2>
+    <p>Email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> or see the <a href="/contact">contact page</a>.</p>
+  </section>
+  <Cta />
+</Base>

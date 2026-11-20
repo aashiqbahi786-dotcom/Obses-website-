@@ -1,0 +1,60 @@
+---
+import { site, nav } from '../config/site';
+import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
+
+const { current } = Astro.props as { current: string };
+const isActive = (href: string) => current === href || current.startsWith(href + '/');
+---
+<header class="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
+  <div class="container-x flex h-16 items-center gap-4">
+    <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label={`${site.name} home`}>
+      <Logo />
+    </a>
+    <nav aria-label="Main" class="ml-6 hidden md:block">
+      <ul class="flex items-center gap-1">
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'rounded-sm px-3 py-2 text-sm font-medium hover:bg-surface',
+                isActive(item.href) ? 'text-fg' : 'text-muted',
+              ]}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="ml-auto flex items-center gap-2">
+      <ThemeToggle />
+      <a
+        href="/invite"
+        class="hidden sm:inline-flex items-center rounded-sm bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast hover:bg-accent-hover"
+      >Request an invite</a>
+      <details class="md:hidden relative" data-mobile-menu>
+        <summary class="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-line" aria-label="Open menu">
+          <Icon name="menu" />
+        </summary>
+        <nav aria-label="Mobile" class="absolute right-0 mt-2 w-64 rounded-md border border-line bg-bg p-2 shadow-lg">
+          <ul>
+            {nav.map((item) => (
+              <li><a href={item.href} class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">{item.label}</a></li>
+            ))}
+            <li><a href="/why-obsess" class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">Why Obsess</a></li>
+            <li><a href="/benchmarks" class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">Benchmarks</a></li>
+            <li class="pt-2"><a href="/invite" class="block rounded-sm bg-accent px-3 py-3 text-center font-semibold text-accent-contrast">Request an invite</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    var m = document.querySelector('[data-mobile-menu]');
+    if (m && m.open && !m.contains(e.target)) m.open = false;
+  });
+</script>

@@ -1,0 +1,37 @@
+---
+/** Lucide icon as inline SVG (build time, zero JS). Decorative unless `label` is set. */
+interface Props {
+  name: string;
+  class?: string;
+  size?: number;
+  label?: string;
+}
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const { name, class: cls = '', size = 20, label } = Astro.props;
+let raw: string;
+try {
+  raw = readFileSync(join(process.cwd(), 'node_modules/lucide-static/icons', `${name}.svg`), 'utf8');
+} catch {
+  throw new Error(`Unknown Lucide icon: ${name}`);
+}
+const inner = raw.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={cls}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  focusable="false"
+  set:html={inner}
+/>

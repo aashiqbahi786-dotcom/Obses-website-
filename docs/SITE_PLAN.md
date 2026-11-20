@@ -1,6 +1,6 @@
-# Site plan — DRAFT, waiting for founder approval
+# Site plan — APPROVED (2026-11-20)
 
-Status: **plan only, no code yet.** Placeholders: `{{BRAND_DOMAIN}}`, `{{CONTACT_EMAIL}}` live only in `src/config/site.ts`.
+Status: **approved and built.** Additions during build: `/features` and `/use-cases` index pages. Placeholders: `{{BRAND_DOMAIN}}`, `{{CONTACT_EMAIL}}` live only in `src/config/site.ts`.
 
 ## 1. Sitemap (all indexable)
 

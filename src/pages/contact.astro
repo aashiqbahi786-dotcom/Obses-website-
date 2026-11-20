@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
+import { staticPages } from '../lib/pages';
+import { site } from '../config/site';
+
+const meta = staticPages.contact;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
+  <PageHeader
+    title={`Contact ${site.name}`}
+    answer={`The fastest way to reach the ${site.name} team is email. Write to us about the builder, partnerships, press or anything else, in English, Hinglish or Hindi. If you want to try ${site.name}, request an invite instead, so we can add you to the Alpha list and tell you when a place opens up.`}
+  />
+  <section class="container-x py-4">
+    <h2 class="sr-only">Ways to reach us</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <a href={`mailto:${site.contactEmail}`} class="flex items-center gap-3 rounded-md border border-line p-5 hover:border-accent">
+        <span class="text-accent"><Icon name="mail" /></span>
+        <span><span class="block font-semibold">Email</span><span class="text-muted">{site.contactEmail}</span></span>
+      </a>
+      <a href="/invite" class="flex items-center gap-3 rounded-md border border-line p-5 hover:border-accent">
+        <span class="text-accent"><Icon name="ticket" /></span>
+        <span><span class="block font-semibold">Request an invite</span><span class="text-muted">Join the Alpha list</span></span>
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,52 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import Icon from '../../components/Icon.astro';
+import { staticPages } from '../../lib/pages';
+import { faqPage } from '../../lib/schema';
+import { criteria, obsessColumn, valueLabel } from '../../lib/compare';
+
+const meta = staticPages.compare;
+const items = (await getCollection('compare')).sort((a, b) => a.data.order - b.data.order);
+const faq = (await getEntry('faq', 'compare'))!.data.items;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]} schema={[faqPage(faq)]}>
+  <PageHeader
+    title="Compare Obsess with other AI app builders"
+    answer="These pages compare Obsess with Lovable, Bolt.new, Replit, v0, Emergent and Dora AI, feature by feature. Competitor facts come only from each product's official website, with a link and the date checked. If a fact is not verified, the table shows a dash. We also say where other tools are stronger."
+  />
+  <section class="container-x py-6" aria-labelledby="list">
+    <h2 id="list" class="text-2xl font-bold">Which comparison do you want to see?</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((c) => (
+        <li>
+          <a href={`/compare/${c.id}`} class="flex items-center justify-between rounded-md border border-line p-5 font-semibold hover:border-accent">
+            Obsess vs {c.data.name} <Icon name="arrow-right" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="container-x py-8" aria-labelledby="obsess-col">
+    <h2 id="obsess-col" class="text-2xl font-bold">What does Obsess offer today?</h2>
+    <div class="mt-6 overflow-x-auto rounded-md border border-line">
+      <table class="w-full text-left text-sm">
+        <caption class="sr-only">Obsess features and status</caption>
+        <thead class="bg-surface"><tr><th scope="col" class="px-3 py-3 md:px-4">Feature</th><th scope="col" class="px-3 py-3 md:px-4">Obsess</th></tr></thead>
+        <tbody>
+          {criteria.map((c) => (
+            <tr class="border-t border-line">
+              <th scope="row" class="px-3 py-3 md:px-4 font-medium">{c.label}</th>
+              <td class="px-3 py-3 md:px-4">{valueLabel[obsessColumn[c.id].value]}{obsessColumn[c.id].note && <span class="block text-xs text-muted">{obsessColumn[c.id].note}</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <Faq items={faq} />
+  <Cta />
+</Base>

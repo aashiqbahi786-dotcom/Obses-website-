@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import LegalDraft from '../components/LegalDraft.astro';
+import { staticPages } from '../lib/pages';
+import { site } from '../config/site';
+
+const meta = staticPages.terms;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
+  <LegalDraft
+    title="Terms of service (draft)"
+    answer={`These draft terms describe the basic rules for using ${site.name} during the invite-only Alpha: what you can build, what is not allowed, and how credits and publishing are meant to work. They are placeholders written before launch and will be replaced by terms reviewed by a lawyer.`}
+  >
+    <h2>What is not allowed?</h2>
+    <p>Phishing pages, scams, malware, content you do not have the right to use, and anything illegal. Our pre-publish security scan may hold or block such pages.</p>
+    <h2>Who owns what I build?</h2>
+    <p>To be completed with legal review.</p>
+    <h2>How do credits work?</h2>
+    <p>To be completed when paid plans open. See the <a href="/pricing">planned pricing</a>.</p>
+    <h2>How can I contact you?</h2>
+    <p>Email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+  </LegalDraft>
+</Base>

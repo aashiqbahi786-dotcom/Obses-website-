@@ -1,0 +1,59 @@
+# Page-level FAQs (rendered with FAQPage JSON-LD).
+
+home:
+  items:
+    - q: What is Obsess?
+      a: Obsess is an AI app builder. You describe an idea in plain words — in English, Hinglish, Hindi or Banglish — and an AI agent plans, builds, checks, previews and publishes a working website, web app or Android app.
+    - q: Do I need to know coding?
+      a: No. Obsess is made for non-coders. You chat with the AI; it writes and checks the code.
+    - q: Can I build in Hindi or Hinglish?
+      a: Yes. The AI replies in the language and script you write in, including Hinglish, Hindi in Devanagari, Banglish and English.
+    - q: Can I build an Android app without coding?
+      a: Yes. Obsess builds Android apps with React Native and Expo and shows them in a phone-frame preview. APK download and Play Store publishing are coming soon.
+    - q: Do I own what I build?
+      a: You control your app and its publishing. Export to zip or GitHub and moving to your own accounts are on the roadmap and not available yet.
+    - q: Is Obsess free?
+      a: Obsess is in invite-only Alpha. Pricing is planned, not live; the planned plans include a Free plan. See the Pricing page.
+    - q: Why is Obsess invite-only?
+      a: We are testing with a small group first so we can fix problems before opening more widely.
+
+product:
+  items:
+    - q: What does Obsess build?
+      a: Websites and web apps (React) and Android apps (React Native with Expo), from a description in your own language.
+    - q: How does the AI check its work?
+      a: Every change is checked with a typecheck and a build before it is saved. Runtime errors in the preview get a Fix with AI button.
+    - q: How are credits used?
+      a: You see a credit estimate before every task and pay by task size. Pricing is planned and not live yet.
+
+why-obsess:
+  items:
+    - q: How is Obsess different from other AI app builders?
+      a: It is built for non-coders in their own language, works fully from a phone, builds Android apps as well as web, verifies changes with a build before saving, and shows the cost before every task.
+    - q: Is everything on this page available today?
+      a: No. Ownership (export) and Launchpad are on the roadmap and are labelled Coming soon.
+
+pricing:
+  items:
+    - q: What is a credit?
+      a: A unit for paying for AI work. Under the planned pricing, one credit is about $0.25 of value.
+    - q: How much will my task cost?
+      a: You see an estimate before every task. Under the planned rules, a task costs at least 0.5 credit, rounds up in 0.5 steps and costs at most 60 credits.
+    - q: What happens when my credits run out?
+      a: Under the planned Free plan, credits refresh daily (5 a day, up to 30 a month). Paid plans give monthly credits. Details may change before launch.
+    - q: Can I pay today?
+      a: No. Paid plans open with the private beta. Obsess is currently invite-only Alpha.
+
+benchmarks:
+  items:
+    - q: Are these independent benchmarks?
+      a: No. They are internal evals run by the Obsess team. We publish the method and limits so you can judge them.
+    - q: Will you update the numbers?
+      a: Yes. New results are added with their date; old results stay for comparison.
+
+compare:
+  items:
+    - q: Where do the competitor facts come from?
+      a: Only from each product's official website, with a link and the date we checked. If we could not verify a fact, the table shows a dash.
+    - q: Is Obsess better than every other builder?
+      a: Not at everything. Obsess is in invite-only Alpha, and several features are coming soon. Mature tools may cover more today.

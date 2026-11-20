@@ -1,0 +1,84 @@
+# Competitor comparisons.
+# RULE: a cell other than "unknown" MUST have `source` (official URL) and `checked` (YYYY-MM-DD).
+# `npm run lint:content` fails otherwise. Unverified → leave the cell out (renders "—").
+# Status 2026-11-20: official sites could not be reached from the build environment,
+# so no competitor cell is filled yet. Run `node scripts/fetch-competitor-pages.mjs`
+# where the network allows, then fill cells from the saved pages.
+
+lovable:
+  order: 1
+  name: Lovable
+  officialUrl: https://lovable.dev
+  metaTitle: Obsess vs Lovable — Factual Feature Comparison
+  description: Obsess vs Lovable compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and Lovable, two AI app builders, feature by feature. Obsess focuses
+    on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
+    Every Lovable fact in the table links to Lovable's official site with the date checked; anything not yet verified shows a dash.
+  cells: {}
+  stronger: []
+
+bolt-new:
+  order: 2
+  name: Bolt.new
+  officialUrl: https://bolt.new
+  metaTitle: Obsess vs Bolt.new — Factual Feature Comparison
+  description: Obsess vs Bolt.new compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and Bolt.new, two AI app builders, feature by feature. Obsess focuses
+    on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
+    Every Bolt.new fact in the table links to its official site with the date checked; anything not yet verified shows a dash.
+  cells: {}
+  stronger: []
+
+replit:
+  order: 3
+  name: Replit
+  officialUrl: https://replit.com
+  metaTitle: Obsess vs Replit — Factual Feature Comparison
+  description: Obsess vs Replit compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and Replit, two platforms for building apps with AI, feature by
+    feature. Obsess focuses on non-coders who write in Hinglish, Hindi or Banglish, phone-first
+    building and Android apps. Every Replit fact links to Replit's official site with the date checked; unverified cells show a dash.
+  cells: {}
+  stronger: []
+
+v0:
+  order: 4
+  name: v0
+  officialUrl: https://v0.app
+  metaTitle: Obsess vs v0 — Factual Feature Comparison
+  description: Obsess vs v0 compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and v0, two AI tools for building apps and interfaces, feature by
+    feature. Obsess focuses on non-coders who write in Hinglish, Hindi or Banglish, phone-first
+    building and Android apps. Every v0 fact links to v0's official site with the date checked; unverified cells show a dash.
+  cells: {}
+  stronger: []
+
+emergent:
+  order: 5
+  name: Emergent
+  officialUrl: https://emergent.sh
+  metaTitle: Obsess vs Emergent — Factual Feature Comparison
+  description: Obsess vs Emergent compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and Emergent, two AI app builders, feature by feature. Obsess focuses
+    on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
+    Every Emergent fact links to Emergent's official site with the date checked; anything not yet verified shows a dash.
+  cells: {}
+  stronger: []
+
+dora-ai:
+  order: 6
+  name: Dora AI
+  officialUrl: https://www.dora.run
+  metaTitle: Obsess vs Dora AI — Factual Feature Comparison
+  description: Obsess vs Dora AI compared feature by feature. Every competitor fact links to its official source with the date checked; unverified cells show "—".
+  answer: >-
+    This page compares Obsess and Dora AI, two AI tools for building websites, feature by feature.
+    Obsess focuses on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and
+    Android apps. Every Dora AI fact links to Dora's official site with the date checked; unverified cells show a dash.
+  cells: {}
+  stronger: []

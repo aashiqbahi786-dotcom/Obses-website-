@@ -1,0 +1,12 @@
+---
+interface Props { title: string; answer: string }
+import PageHeader from './PageHeader.astro';
+const { title, answer } = Astro.props;
+---
+<PageHeader title={title} answer={answer} />
+<div class="container-x">
+  <p role="note" class="max-w-3xl rounded-md bg-warn-soft px-4 py-3 text-sm text-warn-text">
+    <strong>Draft, to be reviewed by a lawyer.</strong> This text is a placeholder and is not legal advice or a final policy.
+  </p>
+</div>
+<section class="container-x prose-o max-w-3xl py-6"><slot /></section>

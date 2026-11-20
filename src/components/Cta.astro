@@ -1,0 +1,11 @@
+---
+import { site } from '../config/site';
+const { title = 'Build your first app in your own language' } = Astro.props as { title?: string };
+---
+<section class="container-x py-12">
+  <div class="rounded-lg bg-accent-soft px-6 py-10 text-center md:px-12">
+    <h2 class="text-2xl font-bold md:text-3xl">{title}</h2>
+    <p class="mx-auto mt-3 max-w-xl text-muted">{site.name} is in invite-only Alpha. Tell us what you want to build.</p>
+    <a href="/invite" class="mt-6 inline-flex items-center rounded-sm bg-accent px-6 py-3 font-semibold text-accent-contrast hover:bg-accent-hover">Request an invite</a>
+  </div>
+</section>

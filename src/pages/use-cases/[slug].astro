@@ -1,0 +1,67 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Card from '../../components/Card.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import { faqPage } from '../../lib/schema';
+import { staticPages } from '../../lib/pages';
+
+export async function getStaticPaths() {
+  const [items, features] = await Promise.all([getCollection('useCases'), getCollection('features')]);
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry, features } }));
+}
+interface Props {
+  entry: CollectionEntry<'useCases'>;
+  features: CollectionEntry<'features'>[];
+}
+const { entry, features } = Astro.props;
+const u = entry.data;
+const path = `/use-cases/${entry.id}`;
+const used = u.features
+  .map((id) => features.find((f) => f.id === id))
+  .filter((x): x is CollectionEntry<'features'> => Boolean(x));
+---
+<Base
+  title={u.metaTitle}
+  description={u.description}
+  path={path}
+  crumbs={[{ label: staticPages.useCases.label, path: '/use-cases' }, { label: u.shortTitle, path }]}
+  schema={u.faq.length ? [faqPage(u.faq)] : []}
+>
+  <PageHeader title={u.title} answer={u.answer} />
+
+  <section class="container-x prose-o max-w-3xl py-6">
+    <h2>What problem does this solve?</h2>
+    <p>{u.problem}</p>
+    <h2>What does Obsess build for you?</h2>
+    <ul>{u.builds.map((b) => <li>{b}</li>)}</ul>
+  </section>
+
+  <section class="container-x py-6" aria-labelledby="prompt">
+    <h2 id="prompt" class="text-2xl font-bold">What should I type?</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <figure class="rounded-md border border-line bg-surface p-5">
+        <figcaption class="text-xs font-semibold uppercase tracking-wide text-muted">Hinglish</figcaption>
+        <p class="mt-2 font-medium" lang="hi-Latn">“{u.promptHinglish}”</p>
+      </figure>
+      <figure class="rounded-md border border-line bg-surface p-5">
+        <figcaption class="text-xs font-semibold uppercase tracking-wide text-muted">English</figcaption>
+        <p class="mt-2 font-medium">“{u.promptEnglish}”</p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="container-x py-8" aria-labelledby="uses">
+    <h2 id="uses" class="text-2xl font-bold">Which features does it use?</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {used.map((f) => (
+        <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>
+      ))}
+    </ul>
+  </section>
+
+  <Faq items={u.faq} />
+  <Cta />
+</Base>

@@ -1,0 +1,58 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { faqPage } from '../lib/schema';
+import { benchmarkRuns } from '../lib/benchmarks';
+
+const meta = staticPages.benchmarks;
+const faq = (await getEntry('faq', 'benchmarks'))!.data.items;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]} schema={[faqPage(faq)]}>
+  <PageHeader
+    title="Obsess benchmarks"
+    answer="These are internal evals of the Obsess agent, run by our team. We give real user-style requests, check the results in a real browser by what each app shows and does, and publish the method, sample size, date and limits. They are small samples with one model, not independent tests."
+  />
+
+  <section class="container-x prose-o max-w-3xl py-4">
+    <h2>How do we test?</h2>
+    <ul>
+      <li><strong>Prompts:</strong> 10 real first requests in Hinglish, English, Hindi and Banglish, each run 3 times.</li>
+      <li><strong>Model:</strong> Claude Sonnet 5.5.</li>
+      <li><strong>Grader:</strong> each app is opened in a real browser and checked by what it shows and does against its list of requirements. We validated the grader by breaking six apps on purpose.</li>
+      <li><strong>Sample size:</strong> 30 Android apps (102 requirements), 10 preview runs, 16 publishes.</li>
+    </ul>
+  </section>
+
+  {benchmarkRuns.map((run) => (
+    <section class="container-x py-6" aria-labelledby={`run-${run.date}`}>
+      <h2 id={`run-${run.date}`} class="text-2xl font-bold">What were the results on {run.date}?</h2>
+      <p class="mt-1 text-sm text-muted">{run.label} · model {run.model}</p>
+      <div class="mt-6 overflow-x-auto rounded-md border border-line">
+        <table class="w-full text-left text-sm">
+          <caption class="sr-only">Internal eval results, {run.date}</caption>
+          <thead class="bg-surface">
+            <tr><th scope="col" class="px-3 py-3 md:px-4">Measure</th><th scope="col" class="px-3 py-3 md:px-4">Result</th><th scope="col" class="px-3 py-3 md:px-4">Details</th></tr>
+          </thead>
+          <tbody>
+            {run.results.map((r) => (
+              <tr class="border-t border-line align-top">
+                <th scope="row" class="px-3 py-3 md:px-4 font-medium">{r.title}</th>
+                <td class="px-3 py-3 md:px-4 text-lg font-extrabold whitespace-nowrap">{r.headline}</td>
+                <td class="px-3 py-3 md:px-4 text-muted">{r.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h3 class="mt-8 text-lg font-semibold">What are the limits?</h3>
+      <ul class="mt-2 list-disc pl-5 text-muted">{run.limits.map((l) => <li>{l}</li>)}</ul>
+    </section>
+  ))}
+
+  <Faq items={faq} />
+  <Cta />
+</Base>

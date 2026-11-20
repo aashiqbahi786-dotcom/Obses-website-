@@ -1,0 +1,57 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import { faqPage } from '../../lib/schema';
+import { staticPages } from '../../lib/pages';
+
+export async function getStaticPaths() {
+  const items = await getCollection('compare');
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+interface Props { entry: CollectionEntry<'compare'> }
+const { entry } = Astro.props;
+const c = entry.data;
+const path = `/compare/${entry.id}`;
+const checkedDates = Object.values(c.cells).map((x) => x.checked).filter(Boolean).sort();
+const lastChecked = checkedDates.at(-1);
+const faq = [
+  ...c.faq,
+  {
+    q: `Where do the ${c.name} facts come from?`,
+    a: `Only from ${c.name}'s official website (${c.officialUrl}), with the date checked. Unverified cells show a dash.`,
+  },
+];
+---
+<Base
+  title={c.metaTitle}
+  description={c.description}
+  path={path}
+  crumbs={[{ label: staticPages.compare.label, path: '/compare' }, { label: `Obsess vs ${c.name}`, path }]}
+  schema={[faqPage(faq)]}
+>
+  <PageHeader title={`Obsess vs ${c.name}`} answer={c.answer} />
+
+  <section class="container-x py-6" aria-labelledby="table">
+    <h2 id="table" class="text-2xl font-bold">How do Obsess and {c.name} compare, feature by feature?</h2>
+    <p class="mt-2 text-sm text-muted">
+      {lastChecked ? `Competitor facts last checked ${lastChecked}.` : `${c.name} facts not verified yet — every cell shows a dash until it is checked against the official site.`}
+    </p>
+    <div class="mt-6"><ComparisonTable name={c.name} cells={c.cells} /></div>
+  </section>
+
+  <section class="container-x prose-o max-w-3xl py-6">
+    <h2>Where is {c.name} stronger?</h2>
+    {c.stronger.length
+      ? <ul>{c.stronger.map((s) => <li>{s.text} (<a href={s.source} rel="nofollow noopener">source</a>, checked {s.checked})</li>)}</ul>
+      : <p>We have not verified this from {c.name}'s official site yet, so we do not list anything here. What we can say honestly: Obsess is in invite-only Alpha and several Obsess features are still Coming soon, so a more mature tool may cover more today.</p>}
+    <h2>Who should choose Obsess?</h2>
+    <p>People who do not code, who want to describe their idea in Hinglish, Hindi, Banglish or English, who build from a phone, or who want an Android app as well as a website, with the cost shown before every task.</p>
+  </section>
+
+  <Faq items={faq} />
+  <Cta />
+</Base>

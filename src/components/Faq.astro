@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  items: { q: string; a: string }[];
+  title?: string;
+}
+const { items, title = 'Frequently asked questions' } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="container-x py-12" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="text-2xl font-bold md:text-3xl">{title}</h2>
+    <div class="mt-6 divide-y divide-line rounded-md border border-line">
+      {items.map((i) => (
+        <details class="group px-4 py-1">
+          <summary class="flex items-center justify-between gap-4 py-4 font-semibold">
+            <h3 class="text-base">{i.q}</h3>
+            <span class="chev shrink-0 transition-transform"><Icon name="chevron-down" /></span>
+          </summary>
+          <p class="pb-4 text-muted">{i.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+)}

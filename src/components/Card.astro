@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+import Badge from './Badge.astro';
+interface Props {
+  href?: string;
+  icon?: string;
+  title: string;
+  text: string;
+  comingSoon?: boolean;
+  headingLevel?: 'h2' | 'h3';
+}
+const { href, icon, title, text, comingSoon = false, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
+const Tag = href ? 'a' : 'div';
+---
+<Tag
+  href={href}
+  class:list={[
+    'flex h-full flex-col rounded-md border border-line bg-bg p-5',
+    href && 'transition-colors hover:border-accent',
+  ]}
+>
+  <div class="flex items-center justify-between gap-2">
+    {icon && <span class="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-accent-soft text-accent"><Icon name={icon} /></span>}
+    {comingSoon && <Badge />}
+  </div>
+  <H class="mt-4 font-semibold">{title}</H>
+  <p class="mt-2 text-sm text-muted">{text}</p>
+</Tag>

@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import LegalDraft from '../components/LegalDraft.astro';
+import { staticPages } from '../lib/pages';
+import { site } from '../config/site';
+
+const meta = staticPages.privacy;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
+  <LegalDraft
+    title="Privacy policy (draft)"
+    answer={`This draft explains what information ${site.name} collects on this website and in the builder, why we collect it, and how you can contact us about it. It is a placeholder written before launch and will be replaced by a policy reviewed by a lawyer. Until then, please ask us if anything is unclear.`}
+  >
+    <h2>What does this website collect?</h2>
+    <p>This website does not use advertising trackers. If you request an invite, your email app sends us the name, email and idea you entered.</p>
+    <h2>What does the builder collect?</h2>
+    <p>To be completed: account data, the content you give the AI (text, images, voice, PDFs), the apps you build, and usage needed for credits and security.</p>
+    <h2>Who do we share data with?</h2>
+    <p>To be completed: service providers needed to run the builder (for example hosting and AI model providers).</p>
+    <h2>How can I contact you about privacy?</h2>
+    <p>Email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+  </LegalDraft>
+</Base>

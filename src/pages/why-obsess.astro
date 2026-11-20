@@ -1,0 +1,39 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Badge from '../components/Badge.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { faqPage } from '../lib/schema';
+import { usps } from '../lib/usp';
+
+const meta = staticPages.why;
+const faq = (await getEntry('faq', 'why-obsess'))!.data.items;
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]} schema={[faqPage(faq)]}>
+  <PageHeader
+    title="Why Obsess is different"
+    answer="Obsess is built for people who do not code and think in Hinglish, Hindi or Banglish. It works fully from a phone, builds websites, web apps and Android apps in one place, checks every change with a build, and shows the cost before each task. Ownership and Launchpad are on the roadmap."
+  />
+  <section class="container-x py-6">
+    <ol class="grid gap-4 md:grid-cols-2">
+      {usps.map((u, i) => (
+        <li class="rounded-md border border-line p-6">
+          <div class="flex items-center justify-between gap-2">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-accent-soft text-accent"><Icon name={u.icon} /></span>
+            {u.roadmap && <Badge />}
+          </div>
+          <h2 class="mt-4 text-xl font-bold">{i + 1}. {u.title}</h2>
+          <p class="mt-2">{u.text}</p>
+          <p class="mt-3 text-sm text-muted"><strong class="text-fg">What it means for you:</strong> {u.meaning}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-6 text-sm text-muted">Want proof for “honest checks”? See the <a href="/benchmarks" class="text-accent underline">benchmarks</a> and the <a href="/compare" class="text-accent underline">comparisons</a>.</p>
+  </section>
+  <Faq items={faq} />
+  <Cta />
+</Base>

@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+
+const links = [
+  { href: '/', label: 'Home', icon: 'house' },
+  { href: '/features', label: 'Features', icon: 'sparkles' },
+  { href: '/use-cases', label: 'Use cases', icon: 'store' },
+  { href: '/pricing', label: 'Pricing', icon: 'calculator' },
+  { href: '/invite', label: 'Request an invite', icon: 'ticket' },
+];
+---
+<Base title="Page not found — Obsess" description="This page does not exist. Find what you need from the links below." path="/404" noindex>
+  <section class="container-x py-16 md:py-24">
+    <p class="text-sm font-semibold text-accent">404</p>
+    <h1 class="mt-2 text-3xl font-extrabold md:text-5xl">This page does not exist</h1>
+    <p class="mt-4 max-w-xl text-muted">The link may be old or mistyped. Yeh page nahi mila — try one of these:</p>
+    <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      {links.map((l) => (
+        <li><a href={l.href} class="flex items-center gap-2 rounded-md border border-line p-4 font-medium hover:border-accent"><span class="text-accent"><Icon name={l.icon} /></span>{l.label}</a></li>
+      ))}
+    </ul>
+  </section>
+</Base>

@@ -1,0 +1,222 @@
+# Use-case pages. Only claims backed by available features; roadmap items are labelled.
+
+restaurant:
+  order: 1
+  title: Website and app for restaurants
+  shortTitle: Restaurants
+  metaTitle: Restaurant Website and Menu App Without Coding
+  description: Build a restaurant website with your menu, timings and location by describing it in Hinglish or English. Upload your menu PDF and publish.
+  icon: utensils
+  answer: >-
+    Obsess helps restaurant owners build a website or menu app without coding. Describe your
+    restaurant in Hinglish or English, upload your menu as a PDF or photo, and the AI builds pages
+    for the menu, timings, location and contact. Preview it on your phone and publish to a free address in one tap.
+  problem: Customers search online before they visit, but many restaurants only have a social media page and an old printed menu. Hiring a developer for a small site is slow and costly.
+  builds:
+    - A menu page built from your menu PDF or photo
+    - Timings, address and a call or WhatsApp contact button
+    - A simple Android menu app with a phone-frame preview
+  promptHinglish: Mera chhota restaurant hai Kolkata mein. Ek website banado jisme menu, timings aur location ho. Menu PDF attach kar raha hu.
+  promptEnglish: I run a small restaurant in Kolkata. Build a website with our menu, timings and location. I am attaching the menu PDF.
+  features: [ai-website-builder, voice-and-pdf-input, photo-to-app, publish-and-hosting]
+  faq:
+    - q: Can customers order online?
+      a: Saving orders needs a database, which is coming soon under App backends. Today you can show the menu and a contact button.
+
+cafe-tea:
+  order: 2
+  title: Website for cafés and tea stalls
+  shortTitle: Cafés and tea stalls
+  metaTitle: Café and Tea Stall Website — Build It by Chat
+  description: Make a simple, good-looking website for your café or tea stall — menu, photos, location — by describing it in your own words.
+  icon: coffee
+  answer: >-
+    Obsess lets café and tea stall owners make a simple website by chatting. Tell the AI your
+    name, menu, prices and location in your own language, add a photo of a design you like, and it
+    builds a clean page you can preview and publish. It works from a phone, so you can build between customers.
+  problem: Small cafés and tea stalls rarely have time to learn website tools, and most of their day happens on a phone.
+  builds:
+    - One-page site with menu and prices
+    - Location, timings and contact
+    - A design based on a photo you like
+  promptHinglish: Meri chai ki dukaan hai. Ek simple website banao — menu, rates, aur Google Maps ka location.
+  promptEnglish: I have a tea stall. Make a simple website with the menu, prices and our Google Maps location.
+  features: [ai-website-builder, photo-to-app, publish-and-hosting]
+
+eggs-farm-food:
+  order: 3
+  title: Website for farm and food businesses
+  shortTitle: Farm and food
+  metaTitle: Farm and Food Business Website — Eggs, Dairy, Produce
+  description: Build a website for your eggs, dairy or produce business. Show products, prices and how to order, written in your own language.
+  icon: egg
+  answer: >-
+    Obsess helps farm and food businesses, such as an eggs, dairy or vegetable business, get online
+    without coding. Describe what you sell, your prices and the areas you deliver to, in Hinglish or
+    English, and the AI builds a website showing your products and how to contact you for orders.
+  problem: Farm and food sellers often take orders on calls and chat, and have no page to share that shows products, prices and delivery areas.
+  builds:
+    - Product and price list
+    - Delivery areas and how to order (call or WhatsApp button)
+    - A simple Android app version with phone-frame preview
+  promptHinglish: Mera eggs business hai, website banado. Desi aur farm eggs dono bechta hu, rates aur delivery areas dikhane hai.
+  promptEnglish: I have an eggs business, build me a website. I sell both country and farm eggs and want to show rates and delivery areas.
+  features: [ai-website-builder, android-app-builder, publish-and-hosting]
+  faq:
+    - q: Can the website take orders?
+      a: Storing orders needs a database (coming soon). Today, add a call or WhatsApp button so customers can order directly.
+
+car-rental:
+  order: 4
+  title: Website for car rental businesses
+  shortTitle: Car rental
+  metaTitle: Car Rental Website Without Coding — Obsess
+  description: Show your cars, rates and booking contact on a website you build by chatting. Add photos, preview on your phone, publish in one tap.
+  icon: car
+  answer: >-
+    Obsess lets car rental owners build a website that shows their cars, rates and how to book,
+    without coding. Describe your fleet and prices, attach car photos or a rate list as a PDF, and
+    the AI builds the pages. Preview them on your phone and publish to a free address in one tap.
+  problem: Customers want to see cars and rates before they call, but a listing page with photos is hard to build and keep updated.
+  builds:
+    - Car listing with photos and rates
+    - Booking enquiry via call or WhatsApp
+    - Rate list from your PDF
+  promptHinglish: Meri car rental service hai Jaipur mein. 6 gaadiyan hai, unke photo aur per-day rate ke saath website banao.
+  promptEnglish: I run a car rental service in Jaipur with 6 cars. Build a website with their photos and per-day rates.
+  features: [ai-website-builder, voice-and-pdf-input, publish-and-hosting]
+  faq:
+    - q: Can customers book online?
+      a: Online booking needs a database (coming soon). Today, link a call or WhatsApp button for enquiries.
+
+mobile-shop:
+  order: 5
+  title: Website for mobile phone shops
+  shortTitle: Mobile shops
+  metaTitle: Mobile Shop Website — Show Phones, Offers, Repairs
+  description: Build a website for your mobile shop with phones, accessories, repair services and offers, by describing it in your own language.
+  icon: smartphone
+  answer: >-
+    Obsess helps mobile shop owners build a website for phones, accessories, repairs and offers,
+    just by describing it. Write or speak what you sell in Hinglish or English, add your price list,
+    and the AI builds the pages. You can change offers later in the same chat and publish again.
+  problem: Prices and offers change often, and updating a website usually needs a developer.
+  builds:
+    - Product and offer pages
+    - Repair services list
+    - Shop location and contact
+  promptHinglish: Mera mobile shop hai. Website banao jisme naye phones, accessories, repair services aur is hafte ke offers ho.
+  promptEnglish: I own a mobile shop. Build a website with new phones, accessories, repair services and this week's offers.
+  features: [ai-website-builder, voice-and-pdf-input, live-preview-version-history-undo, publish-and-hosting]
+
+retail:
+  order: 6
+  title: Website for retail shops
+  shortTitle: Retail shops
+  metaTitle: Retail Shop Website Without Coding — Obsess
+  description: Put your retail shop online with products, prices and contact details. Describe it in your own words and publish in one tap.
+  icon: store
+  answer: >-
+    Obsess helps retail shop owners, from clothing to grocery to hardware, put their shop online
+    without coding. Describe your products and prices, attach a photo or a price list, and the AI
+    builds a website you can preview and publish. Change it later by chatting, with every version saved.
+  problem: Local shops lose customers who search online first, and building a catalogue site feels too technical.
+  builds:
+    - Product catalogue with prices
+    - Shop details, timings and map link
+    - Contact and enquiry buttons
+  promptHinglish: Meri kapdon ki dukaan hai. Ek website banao jisme kurta, saree aur shirts ki categories aur price ho.
+  promptEnglish: I have a clothing shop. Build a website with categories for kurtas, sarees and shirts, with prices.
+  features: [ai-website-builder, photo-to-app, live-preview-version-history-undo, publish-and-hosting]
+  faq:
+    - q: Is this an online store with payments?
+      a: Not yet. Payments and saving orders need app backends, which are coming soon.
+
+creators:
+  order: 7
+  title: Websites for creators
+  shortTitle: Creators
+  metaTitle: Creator Website and Link Page — Build by Chat
+  description: Build a personal site or link page for your channel, portfolio or brand deals. Describe your style, add a screenshot you like, publish.
+  icon: video
+  answer: >-
+    Obsess helps creators build a personal website, portfolio or link page by chatting. Describe
+    your channel, style and links, or upload a screenshot of a design you like, and the AI builds a
+    page that feels like you. Preview it on your phone, change anything in the chat and publish in one tap.
+  problem: Creators want a page that looks like their brand, not a generic link list, without paying a designer.
+  builds:
+    - Personal site or link page
+    - Portfolio of your best work
+    - Brand-deal and contact section
+  promptHinglish: Main ek food creator hu YouTube aur Instagram pe. Mere liye ek stylish link page banao, mere top videos ke saath.
+  promptEnglish: I'm a food creator on YouTube and Instagram. Build me a stylish link page with my top videos.
+  features: [ai-website-builder, photo-to-app, publish-and-hosting]
+
+students:
+  order: 8
+  title: Websites and apps for students
+  shortTitle: Students
+  metaTitle: Build Apps for College Projects Without Coding
+  description: Build a portfolio, a project app or an Android app for college by describing it. Learn by seeing the AI plan and build in your language.
+  icon: graduation-cap
+  answer: >-
+    Obsess helps students build portfolios, project apps and Android apps by describing them. Use
+    Brainstorm mode to plan the idea with the AI in your own language, then switch to Build mode and
+    watch it come together in a live preview. It is a fast way to turn a project idea into something you can show.
+  problem: Students have ideas and deadlines but not always the coding skills or time to build them.
+  builds:
+    - Portfolio website
+    - A web app or Android app for a project idea
+    - A landing page for a club or event
+  promptHinglish: College project ke liye ek Android app chahiye jo attendance track kare. Pehle plan discuss karte hai.
+  promptEnglish: I need an Android app for a college project that tracks attendance. Let's discuss the plan first.
+  features: [brainstorm-and-build-modes, android-app-builder, ai-web-app-builder]
+  faq:
+    - q: Can my app save attendance data?
+      a: Saving data needs a database, which is coming soon. Today the app can work on screen during a session.
+
+startup-mvp:
+  order: 9
+  title: Build a startup MVP without coding
+  shortTitle: Startup MVPs
+  metaTitle: Build a Startup MVP Without Coding — Obsess
+  description: Turn a startup idea into a clickable web app or Android app you can show to users and investors, by describing it in plain words.
+  icon: rocket
+  answer: >-
+    Obsess helps founders turn an idea into a working first version, a web app or Android app you
+    can show to users. Plan it in Brainstorm mode, build it in Build mode, see the cost before each
+    task, and publish to share a link. It is for testing whether people want the idea before you invest more.
+  problem: Validating an idea usually needs a developer and weeks of work before anyone can try it.
+  builds:
+    - A clickable web app or Android app prototype
+    - A landing page to explain the idea
+    - A shareable published link
+  promptHinglish: Mera idea hai — local tutors ko students se connect karna. Ek MVP web app banao jisme tutor list aur filter ho.
+  promptEnglish: My idea connects local tutors with students. Build an MVP web app with a tutor list and filters.
+  features: [brainstorm-and-build-modes, ai-web-app-builder, android-app-builder, credit-estimate-before-every-task]
+  faq:
+    - q: Will the MVP have user accounts?
+      a: Login and database are coming soon under App backends.
+
+agencies:
+  order: 10
+  title: Obsess for agencies and freelancers
+  shortTitle: Agencies
+  metaTitle: AI Website Builder for Agencies and Freelancers
+  description: Build first drafts of client websites and apps faster by describing them. Show clients a live preview, adjust by chat, publish.
+  icon: briefcase
+  answer: >-
+    Obsess helps agencies and freelancers create first versions of client websites and apps by
+    describing them. Paste the client brief or attach it as a PDF, and the AI builds a working draft
+    you can show in a live preview, change by chat and publish. Every version is saved, so you can roll back.
+  problem: Agencies spend many hours on first drafts before a client gives feedback.
+  builds:
+    - First drafts of client sites from a brief
+    - Mock-ups based on a reference screenshot
+    - Quick changes during client calls
+  promptHinglish: Client ka brief attach kiya hai — dental clinic ke liye 4 page website, blue aur white theme.
+  promptEnglish: Client brief attached — a 4-page website for a dental clinic, blue and white theme.
+  features: [ai-website-builder, voice-and-pdf-input, photo-to-app, live-preview-version-history-undo]
+  faq:
+    - q: Can I hand the code to my client?
+      a: Export to zip and GitHub is coming soon.

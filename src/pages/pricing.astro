@@ -1,0 +1,69 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Badge from '../components/Badge.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { faqPage } from '../lib/schema';
+
+const meta = staticPages.pricing;
+const faq = (await getEntry('faq', 'pricing'))!.data.items;
+type Item = { text: string; soon?: boolean };
+const plans: { name: string; price: string; credits: string; items: Item[]; highlight?: boolean }[] = [
+  { name: 'Free', price: '$0', credits: '5 credits a day, up to 30 a month', items: [{ text: '“Built with Obsess” badge' }] },
+  { name: 'Starter', price: '$9', credits: '36 credits a month + 10 bonus', items: [] },
+  { name: 'Pro', price: '$19', credits: '76 credits a month + 10 bonus', items: [{ text: 'Custom domain', soon: true }], highlight: true },
+  {
+    name: 'Launch', price: '$39', credits: '156 credits a month + 10 bonus',
+    items: [{ text: 'Custom domain', soon: true }, { text: 'Launchpad, 7 days', soon: true }, { text: 'Android builds', soon: true }],
+  },
+  {
+    name: 'Scale', price: '$59', credits: '236 credits a month + 10 bonus',
+    items: [{ text: 'Custom domain', soon: true }, { text: 'Launchpad, 14 days', soon: true }, { text: 'Android builds', soon: true }],
+  },
+];
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]} schema={[faqPage(faq)]}>
+  <PageHeader
+    title="Obsess pricing (planned)"
+    answer="Obsess plans five plans: Free, Starter at $9, Pro at $19, Launch at $39 and Scale at $59 a month. You pay with credits, by task size, and see an estimate before every task. This pricing is planned, not live: Obsess is in invite-only Alpha, and paid plans open with the private beta."
+  />
+  <div class="container-x">
+    <p role="note" class="rounded-md bg-warn-soft px-4 py-3 text-sm text-warn-text"><strong>Planned pricing.</strong> Paid plans open with the private beta. Plans and credit amounts may change before launch.</p>
+  </div>
+
+  <section class="container-x py-8" aria-labelledby="plans">
+    <h2 id="plans" class="text-2xl font-bold">Which plans are planned?</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {plans.map((p) => (
+        <li class:list={['flex flex-col rounded-md border p-5', p.highlight ? 'border-accent' : 'border-line']}>
+          <h3 class="font-semibold">{p.name}</h3>
+          <p class="mt-2"><span class="text-3xl font-extrabold">{p.price}</span><span class="text-sm text-muted"> /month</span></p>
+          <p class="mt-2 text-sm">{p.credits}</p>
+          {p.items.length > 0 && (
+            <ul class="mt-4 space-y-2 text-sm">
+              {p.items.map((i) => (
+                <li class="flex flex-wrap items-center gap-2"><span class="text-accent"><Icon name="check" size={16} /></span>{i.text}{i.soon && <Badge />}</li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="container-x prose-o max-w-3xl py-4">
+    <h2>How do credits work?</h2>
+    <ul>
+      <li>One credit is about <strong>$0.25</strong> of value.</li>
+      <li>A task costs at least <strong>0.5 credit</strong>, is rounded up in <strong>0.5</strong> steps, and costs at most <strong>60 credits</strong>.</li>
+      <li>You see a <a href="/features/credit-estimate-before-every-task">credit estimate</a> before every task.</li>
+    </ul>
+  </section>
+
+  <Faq items={faq} />
+  <Cta />
+</Base>

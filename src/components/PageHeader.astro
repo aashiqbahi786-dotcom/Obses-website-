@@ -1,0 +1,18 @@
+---
+/** H1 + answer-first block (40–60 words, checked by scripts/check-seo.mjs). */
+import Badge from './Badge.astro';
+interface Props {
+  title: string;
+  answer: string;
+  eyebrow?: string;
+  comingSoon?: boolean;
+}
+const { title, answer, eyebrow, comingSoon = false } = Astro.props;
+---
+<section class="container-x pt-8 pb-10 md:pt-12">
+  {eyebrow && <p class="text-sm font-semibold text-accent">{eyebrow}</p>}
+  {comingSoon && <Badge />}
+  <h1 class="mt-2 max-w-3xl text-3xl font-extrabold md:text-5xl">{title}</h1>
+  <p data-answer class="mt-5 max-w-3xl text-lg text-muted md:text-xl">{answer}</p>
+  <slot />
+</section>

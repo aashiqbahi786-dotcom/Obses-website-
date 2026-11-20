@@ -1,0 +1,7 @@
+---
+import { site } from '../config/site';
+---
+{site.logo
+  ? <img src={site.logo} alt="" width="28" height="28" />
+  : <span class="inline-flex h-7 w-7 items-center justify-center rounded-sm bg-accent text-accent-contrast text-sm font-extrabold" aria-hidden="true">{site.name.charAt(0)}</span>}
+<span>{site.name}</span>

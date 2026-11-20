@@ -1,0 +1,15 @@
+---
+const { crumbs } = Astro.props as { crumbs: { label: string; path: string }[] };
+---
+<nav aria-label="Breadcrumb" class="container-x pt-6">
+  <ol class="flex flex-wrap items-center gap-1 text-sm text-muted">
+    {crumbs.map((c, i) => (
+      <li class="flex items-center gap-1">
+        {i > 0 && <span aria-hidden="true">/</span>}
+        {i === crumbs.length - 1
+          ? <span aria-current="page" class="text-fg">{c.label}</span>
+          : <a href={c.path} class="hover:text-fg underline-offset-2 hover:underline">{c.label}</a>}
+      </li>
+    ))}
+  </ol>
+</nav>

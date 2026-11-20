@@ -1,0 +1,459 @@
+# Feature pages. status: available | coming-soon
+# Truth rule: only facts from the founder brief. Coming-soon items never claim availability.
+
+ai-website-builder:
+  order: 1
+  status: available
+  title: AI website builder
+  shortTitle: Website builder
+  metaTitle: AI Website Builder — Describe It, Obsess Builds It
+  description: Describe your website in plain words, in English, Hinglish, Hindi or Banglish. Obsess builds it, checks it and publishes it. No coding needed.
+  icon: globe
+  summary: Describe your site in plain words and get a working website in a live preview.
+  answer: >-
+    The Obsess AI website builder turns a plain description into a working website.
+    You write what you need, in English, Hinglish, Hindi or Banglish, and the AI plans the pages,
+    writes the code, checks that it builds and shows it in a live preview. It is made for
+    shop owners, creators and anyone who does not code.
+  sections:
+    - q: How do I build a website without coding?
+      a: Open a chat, describe your business and what the site should show, and send. Obsess plans the pages, writes them and shows the result in a live preview. Ask for changes in the same chat until it looks right, then publish.
+    - q: What kind of websites can I make?
+      a: Business pages, menus, portfolios, landing pages and small multi-page sites. You can also upload a photo or screenshot of a design you like and ask for a site that looks similar.
+    - q: Can I write my request in Hinglish or Hindi?
+      a: Yes. The AI replies in the language and script you use, including Hinglish, Hindi in Devanagari, Banglish and English.
+  limits:
+    - Database and login for your site are coming soon (see App backends).
+    - Custom domains are coming soon; today you publish to a free address.
+  related: [ai-web-app-builder, photo-to-app, publish-and-hosting, live-preview-version-history-undo]
+  faq:
+    - q: Is the website mine?
+      a: You built it and you control publishing and unpublishing. Export to zip or GitHub is coming soon, so moving the code elsewhere is not available yet.
+    - q: Does the website work on phones?
+      a: Obsess is built phone-first, and you can build, preview and publish from a phone. Check the preview on your own phone before you publish.
+
+ai-web-app-builder:
+  order: 2
+  status: available
+  title: AI web app builder
+  shortTitle: Web app builder
+  metaTitle: AI Web App Builder — Build React Apps by Chat
+  description: Build a working web app by describing it. Obsess writes a React app, checks that it builds, and shows it in a live preview you can publish.
+  icon: app-window
+  summary: Describe an app — a calculator, a booking page, a tracker — and get a React web app.
+  answer: >-
+    The Obsess AI web app builder creates interactive web apps from a description. You explain what
+    the app should do, and the AI writes a React app, runs a typecheck and a build before saving,
+    and shows it in a live preview. It suits tools, trackers, calculators and simple business apps.
+  sections:
+    - q: What is the difference between a website and a web app?
+      a: A website mostly shows information. A web app does things — it takes input, calculates, filters or keeps track of something on screen. Obsess builds both from the same chat.
+    - q: How does Obsess make sure the app works?
+      a: Every change is checked with a typecheck and a build before it is saved. If the preview shows a runtime error, a Fix with AI button lets the AI repair it.
+    - q: Can my app save data or have user logins?
+      a: Not yet. A database and login for your apps are coming soon under App backends.
+  limits:
+    - No built-in database or login yet (coming soon).
+    - AI features inside your app without an API key are coming soon (Obsess AI for apps).
+  related: [ai-website-builder, fix-with-ai, live-preview-version-history-undo, app-backends]
+  faq:
+    - q: Which technology does Obsess use for web apps?
+      a: React. You do not need to know it; you only describe what you want.
+    - q: Can I change the app later?
+      a: Yes. Keep chatting to change it. Every saved change is in the version history, and Undo is one tap away.
+
+android-app-builder:
+  order: 3
+  status: available
+  title: Android app builder without coding
+  shortTitle: Android app builder
+  metaTitle: Android App Builder Without Coding — Obsess
+  description: Describe an Android app in your own words and see it running in a phone-frame preview. Obsess builds it with React Native and Expo.
+  icon: smartphone
+  summary: Describe an Android app and see it running in a phone-frame preview.
+  answer: >-
+    Obsess builds Android apps from a plain description, without coding. You describe the app in
+    your own language, and the AI builds it with React Native and Expo and shows it running in a
+    phone-frame preview. In an internal eval on 2026-11-19 (30 apps from 10 requests), all 30 met
+    every requirement, checked in a real browser.
+  sections:
+    - q: Can I build an Android app without coding?
+      a: Yes. Describe the screens and what the app should do. Obsess writes the app and shows it in a phone frame so you can tap through it before you go further.
+    - q: How fast do I see the app?
+      a: In our internal eval (10 requests, 2026-11-19), the Android preview was running within 3 minutes in 10 of 10 cases, with a median of 25.6 seconds. See Benchmarks for the method and limits.
+    - q: Can I put the app on the Play Store?
+      a: Not yet. APK downloads and Play Store publishing are coming soon.
+  limits:
+    - APK download and Play Store publishing are coming soon.
+    - Benchmarks are small internal tests with one model; see the Benchmarks page.
+  related: [android-apk-play-store-publishing, live-preview-version-history-undo, brainstorm-and-build-modes, photo-to-app]
+  faq:
+    - q: Which technology is used?
+      a: React Native with Expo, a common way to build Android apps with JavaScript.
+    - q: Do I need an Android phone?
+      a: No. The preview runs in a phone frame inside the builder.
+
+brainstorm-and-build-modes:
+  order: 4
+  status: available
+  title: Brainstorm and Build modes
+  shortTitle: Brainstorm and Build
+  metaTitle: Brainstorm and Build Modes — Plan First, Then Build
+  description: Talk through your idea in Brainstorm mode, then switch to Build mode and let the AI write the app. Replies come in your own language.
+  icon: messages-square
+  summary: Plan and discuss your idea first, then let the AI build it.
+  answer: >-
+    Obsess has two chat modes. Brainstorm mode is for planning: you discuss the idea, pages and
+    features with the AI without changing any code. Build mode is where the AI writes the app.
+    Both reply in your language and script, so you can think out loud in Hinglish, Hindi or Banglish.
+  sections:
+    - q: Why plan before building?
+      a: A clear plan means fewer changes later. In Brainstorm mode you can ask questions, compare ideas and agree on what to build before any credits go into building.
+    - q: When should I switch to Build mode?
+      a: When you know what the first version should do. Switch to Build and the AI starts writing the app.
+    - q: Which languages does the AI reply in?
+      a: The language and script you write in, including Hinglish, Hindi in Devanagari, Banglish and English.
+  related: [ai-website-builder, android-app-builder, credit-estimate-before-every-task]
+  faq:
+    - q: Does Brainstorm mode change my app?
+      a: No. Brainstorm is for discussion and planning. Changes to the app happen in Build mode.
+
+photo-to-app:
+  order: 5
+  status: available
+  title: Photo to app
+  shortTitle: Photo to app
+  metaTitle: Photo to App — Turn a Screenshot into an App
+  description: Upload a photo or screenshot of a design you like and ask Obsess to build an app or website that looks like it.
+  icon: image
+  summary: Upload a photo or screenshot and get an app that looks like it.
+  answer: >-
+    Photo to app lets you show Obsess what you want instead of describing every detail. Upload a
+    photo or screenshot of a screen you like, a sketch or another app, and ask for an app or
+    website that looks like it. The AI uses the image as a guide and builds a working version.
+  sections:
+    - q: How does photo to app work?
+      a: Attach an image in the chat and say what you want, for example "make my menu page look like this". The AI reads the layout and colours and builds a similar screen.
+    - q: What images work best?
+      a: Clear screenshots or photos where the layout is easy to see. A hand-drawn sketch on paper can also work as a starting point.
+  limits:
+    - The result is a similar design, not a pixel-perfect copy.
+    - Only use images you have the right to use.
+  related: [voice-and-pdf-input, ai-website-builder, android-app-builder]
+  faq:
+    - q: Can I copy another company's app exactly?
+      a: Use images as inspiration for your own design. Do not copy another brand's logo, name or content.
+
+voice-and-pdf-input:
+  order: 6
+  status: available
+  title: Voice and PDF input
+  shortTitle: Voice and PDF input
+  metaTitle: Build an App by Voice or from a PDF — Obsess
+  description: Speak your idea or upload a PDF such as a menu or price list. Obsess uses it to build your website or app. Web search is used only when needed.
+  icon: mic
+  summary: Speak your idea or attach a PDF — a menu, a price list, a brief.
+  answer: >-
+    Obsess accepts more than typed text. You can speak your request with voice input, or attach a
+    PDF document such as a menu, price list or project brief, and the AI uses it while building.
+    Web search is used only when a task needs live facts, so your request stays focused.
+  sections:
+    - q: Can I describe my app by voice?
+      a: Yes. Use the microphone in the chat and speak your request. This helps when typing on a phone is slow.
+    - q: What can I do with a PDF?
+      a: Attach documents with your real details — a menu, a product list, opening hours — so the AI can put them into your site instead of placeholder text.
+    - q: Does Obsess search the web?
+      a: Only when the task needs live facts. Most building does not need it.
+  related: [photo-to-app, brainstorm-and-build-modes, ai-website-builder]
+  faq:
+    - q: Which languages can I speak in?
+      a: Speak the way you normally would. The AI replies in the language and script you use.
+
+live-preview-version-history-undo:
+  order: 7
+  status: available
+  title: Live preview, version history and Undo
+  shortTitle: Preview, history and Undo
+  metaTitle: Live Preview, Version History and One-Tap Undo
+  description: See every change in a live preview. Each change is checked before it is saved, kept in version history, and one tap undoes it.
+  icon: history
+  summary: See changes live, keep every version, undo with one tap.
+  answer: >-
+    Every change Obsess makes appears in a live preview, so you see the result before you publish.
+    Each change is checked with a typecheck and a build before it is saved, kept in version
+    history, and can be reversed with one tap. You can try ideas freely without losing a version that worked.
+  sections:
+    - q: What does "checked before it is saved" mean?
+      a: Before a change is stored, Obsess runs a typecheck and a build. A change that breaks the build is not saved as a new version.
+    - q: How do I go back to an older version?
+      a: Use Undo to reverse the last change, or pick an earlier version from the history.
+    - q: How is an Android app previewed?
+      a: Inside a phone frame in the builder.
+  related: [fix-with-ai, ai-web-app-builder, android-app-builder]
+  faq:
+    - q: Does a passing build mean the app is perfect?
+      a: No. It means the code compiles and builds. Always try the preview yourself; if something breaks at runtime, use Fix with AI.
+
+fix-with-ai:
+  order: 8
+  status: available
+  title: Fix with AI
+  shortTitle: Fix with AI
+  metaTitle: Fix with AI — One Tap to Repair Preview Errors
+  description: When the live preview shows a runtime error, tap Fix with AI and Obsess reads the error and repairs the app for you.
+  icon: wand-sparkles
+  summary: When the preview shows an error, one tap asks the AI to fix it.
+  answer: >-
+    Fix with AI is a button that appears when your live preview hits a runtime error. Instead of
+    copying error messages, you tap it and Obsess reads the error, changes the code and checks the
+    fix with a typecheck and a build before saving. It is made for people who never want to read a stack trace.
+  sections:
+    - q: What kind of errors can it fix?
+      a: Runtime errors that show up in the preview, such as a screen that crashes when you tap something.
+    - q: What if the fix does not work?
+      a: Undo the change with one tap, describe what you see in the chat, and try again.
+  limits:
+    - Not every error can be fixed automatically; describing the problem in the chat helps.
+  related: [live-preview-version-history-undo, ai-web-app-builder]
+  faq:
+    - q: Does Fix with AI use credits?
+      a: Fixes are tasks like any other, and you see a credit estimate before a task runs.
+
+publish-and-hosting:
+  order: 9
+  status: available
+  title: Publish and hosting
+  shortTitle: Publish and hosting
+  metaTitle: Publish Your App in One Tap — Free Address
+  description: Publish your website or app to a free address in one tap, with SEO basics, rollback and unpublish. A security scan runs before publishing.
+  icon: rocket
+  summary: One tap to a free address, with SEO basics, rollback and unpublish.
+  answer: >-
+    When your app looks right, Obsess publishes it to a free web address in one tap. Published
+    sites get SEO basics, and you can roll back to an earlier version or unpublish at any time.
+    Before anything goes live, a pre-publish security scan checks for leaked secret keys and phishing-like pages.
+  sections:
+    - q: How do I publish my app?
+      a: Tap Publish. The security scan runs, and if it passes, your app goes live at a free address you can share.
+    - q: Can I take my app down?
+      a: Yes. Unpublish at any time, or roll back to an earlier published version.
+    - q: Can I use my own domain?
+      a: Custom domains are coming soon. Today you publish to a free address.
+  limits:
+    - Custom domains are coming soon.
+  related: [pre-publish-security-scan, custom-domains, ai-website-builder]
+  faq:
+    - q: Did publishing work in testing?
+      a: In our internal eval, 16 of 16 verified eval apps published successfully. See Benchmarks for details and limits.
+
+pre-publish-security-scan:
+  order: 10
+  status: available
+  title: Pre-publish security scan
+  shortTitle: Security scan
+  metaTitle: Pre-Publish Security Scan — Safer Publishing
+  description: Before your app goes live, Obsess blocks leaked secret keys and holds phishing-like pages for review, to protect you and your visitors.
+  icon: shield-check
+  summary: Blocks leaked secret keys and holds phishing-like pages for review.
+  answer: >-
+    Every publish on Obsess passes a security scan first. The scan blocks publishing when it finds
+    leaked secret keys, such as a private API key pasted into the code, and holds pages that look
+    like phishing for review. It protects you from leaking keys and keeps the free address safe for visitors.
+  sections:
+    - q: What happens if a secret key is found?
+      a: Publishing is blocked until the key is removed from the code.
+    - q: Why are some pages held for review?
+      a: Pages that look like phishing — for example, fake login pages — are held so people cannot misuse the platform.
+  related: [publish-and-hosting, ai-website-builder]
+  faq:
+    - q: Does the scan make my app fully secure?
+      a: No scan can promise that. It catches common, serious mistakes before they go live.
+
+credit-estimate-before-every-task:
+  order: 11
+  status: available
+  title: Credit estimate before every task
+  shortTitle: Credit estimate
+  metaTitle: Credit Estimate Before Every Task — Clear AI Cost
+  description: See how many credits a task will cost before it runs. You pay by task size, so small changes cost less than big builds.
+  icon: calculator
+  summary: See the cost before a task runs; pay by task size.
+  answer: >-
+    Obsess shows a credit estimate before every task, so you know the cost before the AI starts.
+    You pay by task size: a small text change costs less than building a new app. This keeps
+    spending predictable, which matters when you are testing an idea or running a small business on a tight budget.
+  sections:
+    - q: How are credits counted?
+      a: Under the planned pricing, a task costs at least 0.5 credit, is rounded up in steps of 0.5, and costs at most 60 credits. See Pricing.
+    - q: Can I decide not to run a task?
+      a: Yes. The estimate appears before the task runs.
+  limits:
+    - Paid plans open with the private beta; pricing is planned, not live.
+  related: [brainstorm-and-build-modes, fix-with-ai]
+  faq:
+    - q: Is the estimate exact?
+      a: It is an estimate shown before the task. The planned rules are on the Pricing page.
+
+# ---------- Coming soon ----------
+
+app-backends:
+  order: 12
+  status: coming-soon
+  title: App backends (database and login)
+  shortTitle: App backends
+  metaTitle: App Backends — Database and Login (Coming Soon)
+  description: Coming soon to Obsess — a database and user login for the apps you build, so they can save data and know who is signed in.
+  icon: database
+  summary: A database and user login for your apps.
+  answer: >-
+    App backends are coming soon to Obsess. The plan is to give the apps you build a database and
+    user login, so an app can save orders, bookings or notes and know who is signed in. Today,
+    Obsess apps do not have a built-in database or login. We will update this page when it ships.
+  sections:
+    - q: What will app backends do?
+      a: Let your app store data and let people sign in. This is planned and not available yet.
+  related: [ai-web-app-builder, obsess-ai-for-apps]
+
+obsess-ai-for-apps:
+  order: 13
+  status: coming-soon
+  title: Obsess AI for apps
+  shortTitle: Obsess AI for apps
+  metaTitle: Obsess AI for Apps — AI Features Without an API Key
+  description: Coming soon — add AI features such as chat or summaries to the apps you build, without getting your own API key.
+  icon: sparkles
+  summary: AI features in your app without your own API key.
+  answer: >-
+    Obsess AI for apps is coming soon. The plan is to let the apps you build use AI features, such
+    as a chat assistant or text summaries, without you signing up for an AI provider or managing an
+    API key. It is not available yet, and this page will be updated when it ships.
+  sections:
+    - q: Why would I want this?
+      a: Getting and protecting an API key is hard for non-coders. This feature is planned to remove that step.
+  related: [app-backends, ai-agents]
+
+custom-domains:
+  order: 14
+  status: coming-soon
+  title: Custom domains
+  shortTitle: Custom domains
+  metaTitle: Custom Domains for Your Obsess App (Coming Soon)
+  description: Coming soon — connect your own domain name to a website or app you published with Obsess. Today you publish to a free address.
+  icon: link
+  summary: Connect your own domain to your published app.
+  answer: >-
+    Custom domains are coming soon to Obsess. The plan is to let you connect a domain you own, such
+    as yourbusiness.com, to a website or app you published. Until then, every published app gets a
+    free shareable address. Custom domains are planned for the Pro plan and above.
+  sections:
+    - q: Can I use my own domain today?
+      a: No. Today you publish to a free address. This page will be updated when custom domains ship.
+  related: [publish-and-hosting]
+
+export:
+  order: 15
+  status: coming-soon
+  title: Export (zip and GitHub)
+  shortTitle: Export
+  metaTitle: Export Your App as Zip or to GitHub (Coming Soon)
+  description: Coming soon — download your app's code as a zip file or send it to GitHub, so you can move it to your own accounts.
+  icon: download
+  summary: Download your code as a zip or send it to GitHub.
+  answer: >-
+    Export is coming soon to Obsess. The plan is to let you download your app's code as a zip file
+    or send it to GitHub, so you can keep a copy, hand it to a developer or move it to your own
+    accounts. This is part of our ownership roadmap and is not available today.
+  sections:
+    - q: Why does export matter?
+      a: It means your app is not locked in. Ownership is one of the reasons Obsess exists, and export is planned for that reason.
+  related: [custom-domains, app-backends]
+
+ai-agents:
+  order: 16
+  status: coming-soon
+  title: AI agents
+  shortTitle: AI agents
+  metaTitle: AI Agents for Your Business (Coming Soon) — Obsess
+  description: Coming soon — build AI agents for support, automation and everyday business tasks, and connect them to the apps you build.
+  icon: bot
+  summary: AI agents for support and automation, connected to your apps.
+  answer: >-
+    AI agents are coming soon to Obsess. The plan is to let you build agents from templates, such
+    as a customer support or business automation agent, adjust them by chat, and connect them to
+    the apps you build with permissions you control. They are not available yet; this page will be updated.
+  sections:
+    - q: What could an agent do?
+      a: Planned examples include answering customer questions and handling routine business tasks. Nothing here is available yet.
+  related: [obsess-ai-for-apps, app-backends]
+
+visual-editor:
+  order: 17
+  status: coming-soon
+  title: Visual editor
+  shortTitle: Visual editor
+  metaTitle: Visual Editor — Click to Change Your App (Coming Soon)
+  description: Coming soon — click on any part of your app in the preview to change text, colours and layout directly, without writing a prompt.
+  icon: mouse-pointer-click
+  summary: Click on the preview to change text, colours and layout.
+  answer: >-
+    A visual editor is coming soon to Obsess. The plan is to let you click a part of your app in
+    the live preview and change its text, colours or layout directly, without typing a request.
+    Today, every change is made by chatting with the AI. This page will be updated when it ships.
+  sections:
+    - q: How do I edit my app today?
+      a: Describe the change in the chat. The AI makes it, checks it and shows it in the preview.
+  related: [live-preview-version-history-undo]
+
+launchpad:
+  order: 18
+  status: coming-soon
+  title: Launchpad (showcase and promotion)
+  shortTitle: Launchpad
+  metaTitle: Launchpad — Showcase and Promote Your App (Coming Soon)
+  description: Coming soon — show your app on Launchpad, collect feedback and promote it, so building is followed by real users.
+  icon: megaphone
+  summary: Showcase, feedback and promotion for what you build.
+  answer: >-
+    Launchpad is coming soon to Obsess. The plan is a place to showcase the apps people build, get
+    feedback and promote your launch, because building an app is only half the job; finding users
+    is the other half. It is planned for the Launch and Scale plans and is not available yet.
+  sections:
+    - q: Why build Launchpad?
+      a: Most builders stop at "your app is live". Obsess plans to help with the next step — being seen.
+  related: [publish-and-hosting]
+
+premium-3d-storytelling-websites:
+  order: 19
+  status: coming-soon
+  title: Premium 3D storytelling websites
+  shortTitle: 3D storytelling websites
+  metaTitle: Premium 3D Storytelling Websites (Coming Soon)
+  description: Coming soon — rich, animated 3D storytelling websites for brands and launches, built by describing the story you want to tell.
+  icon: box
+  summary: Rich, animated 3D websites for brands and launches.
+  answer: >-
+    Premium 3D storytelling websites are coming soon to Obsess. The plan is to build rich, animated
+    sites with 3D scenes that tell a brand or product story as visitors scroll, created by
+    describing the story you want. This is not available today, and this page will be updated when it ships.
+  sections:
+    - q: Who is this for?
+      a: Brands, launches and portfolios that want a memorable site. Planned, not available.
+  related: [ai-website-builder]
+
+android-apk-play-store-publishing:
+  order: 20
+  status: coming-soon
+  title: Android APK and Play Store publishing
+  shortTitle: APK and Play Store
+  metaTitle: Android APK and Play Store Publishing (Coming Soon)
+  description: Coming soon — download an installable APK of your Android app and publish it to Google Play from Obsess.
+  icon: package
+  summary: Download an APK and publish to Google Play.
+  answer: >-
+    Android APK and Play Store publishing are coming soon to Obsess. Today you can build an Android
+    app and see it running in a phone-frame preview. The plan is to add an installable APK download
+    and publishing to Google Play through your own developer account. This page will be updated when it ships.
+  sections:
+    - q: What can I do with my Android app today?
+      a: Build it and try it in the phone-frame preview. Downloading and store publishing come next.
+  related: [android-app-builder]

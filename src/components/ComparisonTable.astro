@@ -1,0 +1,50 @@
+---
+import { criteria, obsessColumn, valueLabel, type CellValue } from '../lib/compare';
+interface CompCell { value: CellValue; note?: string; source?: string; checked?: string }
+interface Props {
+  name: string;
+  cells: Record<string, CompCell>;
+}
+const { name, cells } = Astro.props;
+const tone: Record<CellValue, string> = {
+  yes: 'text-fg font-semibold',
+  no: 'text-muted',
+  'coming-soon': 'text-warn-text',
+  unknown: 'text-muted',
+};
+---
+<div class="overflow-x-auto rounded-md border border-line">
+  <table class="w-full text-left text-sm">
+    <caption class="sr-only">Feature comparison: Obsess and {name}</caption>
+    <thead class="bg-surface">
+      <tr>
+        <th scope="col" class="px-3 py-3 md:px-4 font-semibold">Feature</th>
+        <th scope="col" class="px-3 py-3 md:px-4 font-semibold">Obsess</th>
+        <th scope="col" class="px-3 py-3 md:px-4 font-semibold">{name}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {criteria.map((c) => {
+        const o = obsessColumn[c.id];
+        const t: CompCell = cells[c.id] ?? { value: 'unknown' };
+        return (
+          <tr class="border-t border-line align-top">
+            <th scope="row" class="px-3 py-3 md:px-4 font-medium">{c.label}</th>
+            <td class="px-3 py-3 md:px-4">
+              <span class={tone[o.value]}>{valueLabel[o.value]}</span>
+              {o.note && <span class="block text-xs text-muted">{o.note}</span>}
+            </td>
+            <td class="px-3 py-3 md:px-4">
+              <span class={tone[t.value]}>{valueLabel[t.value]}</span>
+              {t.note && <span class="block text-xs text-muted">{t.note}</span>}
+              {t.source && (
+                <a href={t.source} rel="nofollow noopener" class="block text-xs text-accent underline">Source, checked {t.checked}</a>
+              )}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
+<p class="mt-3 text-sm text-muted">"—" means not verified yet from {name}'s official site. We never fill a cell from memory.</p>

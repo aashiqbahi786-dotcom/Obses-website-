@@ -1,0 +1,83 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Card from '../components/Card.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { faqPage, softwareApplication } from '../lib/schema';
+
+const meta = staticPages.product;
+const faq = (await getEntry('faq', 'product'))!.data.items;
+const features = (await getCollection('features')).sort((a, b) => a.data.order - b.data.order);
+const link = (id: string, text: string) => ({ href: `/features/${id}`, text });
+const blocks = [
+  {
+    q: 'How do I talk to the builder?',
+    a: 'Everything happens in one chat. Brainstorm mode is for planning — discuss the idea without changing code. Build mode is where the AI writes the app. The AI replies in your language and script: Hinglish, Hindi in Devanagari, Banglish, English and others.',
+    links: [link('brainstorm-and-build-modes', 'Brainstorm and Build modes')],
+  },
+  {
+    q: 'What can I give the AI besides text?',
+    a: 'A photo or screenshot of a design you like, your voice, or a PDF such as a menu or price list. Web search is used only when a task needs live facts.',
+    links: [link('photo-to-app', 'Photo to app'), link('voice-and-pdf-input', 'Voice and PDF input')],
+  },
+  {
+    q: 'What does Obsess build?',
+    a: 'Websites and web apps built with React, and Android apps built with React Native and Expo. Web apps show in a live preview; Android apps show in a phone frame.',
+    links: [link('ai-website-builder', 'Website builder'), link('ai-web-app-builder', 'Web app builder'), link('android-app-builder', 'Android app builder')],
+  },
+  {
+    q: 'How do I know the app works?',
+    a: 'Every change is checked with a typecheck and a build before it is saved. Each saved change goes into version history with one-tap Undo. If the preview shows a runtime error, a Fix with AI button asks the AI to repair it.',
+    links: [link('live-preview-version-history-undo', 'Preview, history and Undo'), link('fix-with-ai', 'Fix with AI')],
+  },
+  {
+    q: 'How do I publish?',
+    a: 'One tap publishes to a free address, with SEO basics, rollback and unpublish. A security scan runs first: it blocks leaked secret keys and holds phishing-like pages for review.',
+    links: [link('publish-and-hosting', 'Publish and hosting'), link('pre-publish-security-scan', 'Security scan')],
+  },
+  {
+    q: 'How do credits work?',
+    a: 'You see a credit estimate before every task and pay by task size. Pricing is planned, not live; paid plans open with the private beta.',
+    links: [link('credit-estimate-before-every-task', 'Credit estimate'), { href: '/pricing', text: 'Planned pricing' }],
+  },
+  {
+    q: 'Can I do all of this from a phone?',
+    a: 'Yes. The builder is mobile-first: describe, preview and publish from your phone.',
+    links: [],
+  },
+];
+---
+<Base
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  crumbs={[{ label: meta.label, path: meta.path }]}
+  schema={[softwareApplication(meta.description), faqPage(faq)]}
+>
+  <PageHeader
+    title="The Obsess AI app builder"
+    answer="Obsess is a chat-based builder. You plan your idea in Brainstorm mode, then the AI builds it in Build mode — a website, web app or Android app — from text, a photo, your voice or a PDF. Every change is checked before saving, shown in a live preview, and published in one tap after a security scan."
+  />
+  <section class="container-x prose-o max-w-3xl py-4">
+    {blocks.map((b) => (
+      <>
+        <h2>{b.q}</h2>
+        <p>{b.a}</p>
+        {b.links.length > 0 && <p class="text-sm">{b.links.map((l, i) => <>{i > 0 && ' · '}<a href={l.href}>{l.text}</a></>)}</p>}
+      </>
+    ))}
+  </section>
+  <section class="container-x py-8" aria-labelledby="all">
+    <h2 id="all" class="text-2xl font-bold">Every feature</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {features.map((f) => (
+        <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>
+      ))}
+    </ul>
+  </section>
+  <Faq items={faq} />
+  <Cta />
+</Base>
