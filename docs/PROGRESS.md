@@ -31,12 +31,17 @@ _Last updated: 2026-11-20_
 - New `products` collection + 5 product pages + `/products` hub; home, nav, footer, FAQ, USPs, compare table, llms.txt, OG images updated.
 - 51 pages + 5 redirect stubs. All checks pass. Lighthouse mobile 100/100/100/100 on 9 key pages incl. the 3 new product pages (local preview).
 
+## Live (2026-11-20)
+- Deployed on Cloudflare Workers (static assets) from `main`: https://obses-website.aashiqbahi786.workers.dev
+- Verified live: all product/feature/compare pages 200, old feature URL 301 → product page, 404 page, robots/llms/sitemap/OG/favicon served, security headers present.
+- Lighthouse mobile on the live URL: 100 / 100 / 100 / 100 on 9 key pages (`reports/lighthouse.md`).
+
 ## Pending
 - `main` branch created (2026-11-20) for Cloudflare Pages. Founder chose to keep all 5 products "available" (incl. 3D and Agent builder).
 - **Competitor facts:** official sites (lovable.dev, bolt.new, replit.com, v0.app, emergent.sh, dora.run) are blocked by this environment's network, so every competitor cell shows "—". Once reachable: `node scripts/fetch-competitor-pages.mjs`, then fill `src/content/compare.yaml` with source + date.
 - Hindi pages with `hreflang` (phase 2, planned only).
 - Real invite form provider (today: opens the visitor's email app).
-- Lighthouse on the real Cloudflare URL after deploy.
+- Real domain: canonical URLs, sitemap and OG links still point to the placeholder `obsess.example`; set the domain in `src/config/site.ts` before submitting to Google.
 
 ## Testing pending
 - Real-device check on an Android phone (founder).

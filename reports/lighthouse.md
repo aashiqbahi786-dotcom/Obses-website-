@@ -1,6 +1,6 @@
 # Lighthouse (mobile, simulated throttling) — 2026-11-20
 
-Run against `http://localhost:4321` (local preview build). Production numbers on Cloudflare may differ.
+Run against `https://obses-website.aashiqbahi786.workers.dev` (local preview build). Production numbers on Cloudflare may differ.
 
 | Page | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
