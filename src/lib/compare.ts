@@ -4,6 +4,8 @@ export type CellValue = 'yes' | 'no' | 'coming-soon' | 'unknown';
 export const criteria = [
   { id: 'chat-build', label: 'Builds websites and web apps from a chat description' },
   { id: 'android', label: 'Builds Android apps' },
+  { id: 'agents', label: 'AI agent builder' },
+  { id: '3d-websites', label: '3D scroll animation websites' },
   { id: 'live-preview', label: 'Live preview while building' },
   { id: 'indic-languages', label: 'Replies in Hinglish, Hindi and Banglish' },
   { id: 'cost-estimate', label: 'Cost estimate before every task' },
@@ -20,6 +22,8 @@ export type CriterionId = (typeof criteria)[number]['id'];
 export const obsessColumn: Record<CriterionId, { value: CellValue; note?: string }> = {
   'chat-build': { value: 'yes' },
   android: { value: 'yes', note: 'Build and phone-frame preview; APK and Play Store coming soon' },
+  agents: { value: 'yes' },
+  '3d-websites': { value: 'yes' },
   'live-preview': { value: 'yes' },
   'indic-languages': { value: 'yes' },
   'cost-estimate': { value: 'yes' },

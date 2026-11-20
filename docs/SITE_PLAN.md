@@ -1,6 +1,6 @@
 # Site plan — APPROVED (2026-11-20)
 
-Status: **approved and built.** Additions during build: `/features` and `/use-cases` index pages. Placeholders: `{{BRAND_DOMAIN}}`, `{{CONTACT_EMAIL}}` live only in `src/config/site.ts`.
+Status: **approved and built.** Additions during build: `/features` and `/use-cases` index pages. **2026-11-20:** restructured around 5 products (see DECISIONS → "5 products"); product pages replace the website/web app/Android/agents/3D feature pages. Placeholders: `{{BRAND_DOMAIN}}`, `{{CONTACT_EMAIL}}` live only in `src/config/site.ts`.
 
 ## 1. Sitemap (all indexable)
 

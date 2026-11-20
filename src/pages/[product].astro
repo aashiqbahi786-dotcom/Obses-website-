@@ -1,0 +1,86 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Card from '../components/Card.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Icon from '../components/Icon.astro';
+import { faqPage, softwareApplication } from '../lib/schema';
+import { staticPages } from '../lib/pages';
+import { resolveRefs, sortedProducts } from '../lib/refs';
+
+export async function getStaticPaths() {
+  const items = await getCollection('products');
+  return items.map((entry) => ({ params: { product: entry.id }, props: { entry } }));
+}
+interface Props { entry: CollectionEntry<'products'> }
+const { entry } = Astro.props;
+const p = entry.data;
+const path = `/${entry.id}`;
+const soon = p.status === 'coming-soon';
+const features = await resolveRefs(p.features);
+const others = (await sortedProducts()).filter((x) => x.id !== entry.id);
+---
+<Base
+  title={p.metaTitle}
+  description={p.description}
+  path={path}
+  crumbs={[{ label: staticPages.products.label, path: '/products' }, { label: p.shortName, path }]}
+  schema={[softwareApplication(p.description, p.name, path), ...(p.faq.length ? [faqPage(p.faq)] : [])]}
+>
+  <PageHeader title={p.title} answer={p.answer} eyebrow={soon ? undefined : 'Available in Alpha'} comingSoon={soon}>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="/invite" class="inline-flex items-center justify-center rounded-sm bg-accent px-6 py-3 font-semibold text-accent-contrast hover:bg-accent-hover">Request an invite</a>
+      <a href="/products" class="inline-flex items-center justify-center rounded-sm border border-line px-6 py-3 font-semibold hover:bg-surface">All 5 products</a>
+    </div>
+  </PageHeader>
+
+  <section class="container-x py-6" aria-labelledby="gets">
+    <h2 id="gets" class="text-2xl font-bold">What do you get with the {p.name}?</h2>
+    <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+      {p.gets.map((g) => (
+        <li class="flex gap-3 rounded-md border border-line p-4">
+          <span class="mt-0.5 shrink-0 text-accent"><Icon name="check" /></span><span>{g}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="container-x prose-o max-w-3xl py-6">
+    {p.sections.map((s) => (<><h2>{s.q}</h2><p>{s.a}</p></>))}
+  </section>
+
+  <section class="container-x py-6" aria-labelledby="prompt">
+    <h2 id="prompt" class="text-2xl font-bold">What should I type?</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <figure class="rounded-md border border-line bg-surface p-5">
+        <figcaption class="text-xs font-semibold uppercase tracking-wide text-muted">Hinglish</figcaption>
+        <p class="mt-2 font-medium" lang="hi-Latn">“{p.promptHinglish}”</p>
+      </figure>
+      <figure class="rounded-md border border-line bg-surface p-5">
+        <figcaption class="text-xs font-semibold uppercase tracking-wide text-muted">English</figcaption>
+        <p class="mt-2 font-medium">“{p.promptEnglish}”</p>
+      </figure>
+    </div>
+  </section>
+
+  {features.length > 0 && (
+    <section class="container-x py-8" aria-labelledby="features">
+      <h2 id="features" class="text-2xl font-bold">Which features come with it?</h2>
+      <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map((f) => <li><Card href={f.href} icon={f.icon} title={f.title} text={f.text} comingSoon={f.comingSoon} /></li>)}
+      </ul>
+    </section>
+  )}
+
+  <section class="container-x py-8" aria-labelledby="others">
+    <h2 id="others" class="text-2xl font-bold">What else can you build with Obsess?</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {others.map((o) => <li><Card href={`/${o.id}`} icon={o.data.icon} title={o.data.shortName} text={o.data.tagline} comingSoon={o.data.status === 'coming-soon'} /></li>)}
+    </ul>
+  </section>
+
+  <Faq items={p.faq} />
+  <Cta />
+</Base>

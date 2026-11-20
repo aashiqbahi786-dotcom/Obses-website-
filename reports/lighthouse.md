@@ -6,7 +6,9 @@ Run against `http://localhost:4321` (local preview build). Production numbers on
 |---|---|---|---|---|
 | / | 100 | 100 | 100 | 100 |
 | /product | 100 | 100 | 100 | 100 |
-| /features/android-app-builder | 100 | 100 | 100 | 100 |
+| /mobile-app-builder | 100 | 100 | 100 | 100 |
+| /ai-agent-builder | 100 | 100 | 100 | 100 |
+| /3d-website-builder | 100 | 100 | 100 | 100 |
 | /use-cases/eggs-farm-food | 100 | 100 | 100 | 100 |
 | /compare/lovable | 100 | 100 | 100 | 100 |
 | /pricing | 100 | 100 | 100 | 100 |

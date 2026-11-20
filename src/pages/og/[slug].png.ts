@@ -17,6 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     ...Object.values(staticPages).map((p) => ({ path: p.path, title: p.title.split(' — ')[0], kicker: p.label })),
     { path: '/404', title: 'Page not found', kicker: '404' },
   ];
+  for (const p of await getCollection('products')) pages.push({ path: `/${p.id}`, title: p.data.name, kicker: 'Product' });
   for (const f of await getCollection('features'))
     pages.push({ path: `/features/${f.id}`, title: f.data.title, kicker: f.data.status === 'coming-soon' ? 'Coming soon' : 'Feature' });
   for (const u of await getCollection('useCases')) pages.push({ path: `/use-cases/${u.id}`, title: u.data.title, kicker: 'Use case' });

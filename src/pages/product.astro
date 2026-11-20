@@ -25,8 +25,14 @@ const blocks = [
   },
   {
     q: 'What does Obsess build?',
-    a: 'Websites and web apps built with React, and Android apps built with React Native and Expo. Web apps show in a live preview; Android apps show in a phone frame.',
-    links: [link('ai-website-builder', 'Website builder'), link('ai-web-app-builder', 'Web app builder'), link('android-app-builder', 'Android app builder')],
+    a: 'Five products: websites, web apps (React), Android apps (React Native and Expo), AI agents from templates, and 3D scroll animation websites. Web projects show in a live preview; Android apps show in a phone frame.',
+    links: [
+      { href: '/website-builder', text: 'Website builder' },
+      { href: '/web-app-builder', text: 'Web app builder' },
+      { href: '/mobile-app-builder', text: 'Mobile app builder' },
+      { href: '/ai-agent-builder', text: 'AI agent builder' },
+      { href: '/3d-website-builder', text: '3D scroll websites' },
+    ],
   },
   {
     q: 'How do I know the app works?',
@@ -58,8 +64,8 @@ const blocks = [
   schema={[softwareApplication(meta.description), faqPage(faq)]}
 >
   <PageHeader
-    title="The Obsess AI app builder"
-    answer="Obsess is a chat-based builder. You plan your idea in Brainstorm mode, then the AI builds it in Build mode — a website, web app or Android app — from text, a photo, your voice or a PDF. Every change is checked before saving, shown in a live preview, and published in one tap after a security scan."
+    title="How the Obsess builder works"
+    answer="Obsess is a chat-based builder. You plan your idea in Brainstorm mode, then the AI builds it in Build mode — a website, web app, Android app, AI agent or 3D website — from text, a photo, your voice or a PDF. Changes are checked before saving, shown in a live preview, and published after a security scan."
   />
   <section class="container-x prose-o max-w-3xl py-4">
     {blocks.map((b) => (
@@ -71,7 +77,7 @@ const blocks = [
     ))}
   </section>
   <section class="container-x py-8" aria-labelledby="all">
-    <h2 id="all" class="text-2xl font-bold">Every feature</h2>
+    <h2 id="all" class="text-2xl font-bold">Which features does the builder have?</h2>
     <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {features.map((f) => (
         <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>

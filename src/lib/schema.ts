@@ -22,10 +22,10 @@ export const website = () => ({
 });
 
 /** No `offers` until pricing is live (truth rule). */
-export const softwareApplication = (description: string) => ({
+export const softwareApplication = (description: string, name: string = site.name, path = '/') => ({
   '@type': 'SoftwareApplication',
-  name: site.name,
-  url: site.url,
+  name: name === site.name ? name : `${site.name} ${name}`,
+  url: abs(path),
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'Web',
   description,

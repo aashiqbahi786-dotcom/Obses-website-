@@ -20,14 +20,19 @@ _Last updated: 2026-11-20_
 | `astro check` | 0 errors, 0 warnings |
 | Content truth-lint (`lint:content`) | pass |
 | Contrast AA, both themes (`check:contrast`) | pass |
-| Internal links (`check:links`) | pass (2,484 links) |
+| Internal links (`check:links`) | pass (2,615 links) |
 | SEO/AEO rules (`check:seo`) | pass (all pages) |
 | HTML validator (`html-validate`) | pass |
 | JSON-LD validation (`check:jsonld`) | pass |
-| Lighthouse mobile, 7 key pages | 100 / 100 / 100 / 100 on all 7 (local preview; see `reports/lighthouse.md`) |
+| Lighthouse mobile, 9 key pages | 100 / 100 / 100 / 100 on all 9 (local preview; see `reports/lighthouse.md`) |
 | Phone (390 px) + desktop, light + dark | no horizontal scroll; screenshots reviewed |
 
+## 5-product restructure (2026-11-20)
+- New `products` collection + 5 product pages + `/products` hub; home, nav, footer, FAQ, USPs, compare table, llms.txt, OG images updated.
+- 51 pages + 5 redirect stubs. All checks pass. Lighthouse mobile 100/100/100/100 on 9 key pages incl. the 3 new product pages (local preview).
+
 ## Pending
+- **Deploy gate:** founder confirms AI Agent builder and 3D website builder are live in the app (repo says not built yet). If not, flip their `status` to `coming-soon` before deploy.
 - **Competitor facts:** official sites (lovable.dev, bolt.new, replit.com, v0.app, emergent.sh, dora.run) are blocked by this environment's network, so every competitor cell shows "—". Once reachable: `node scripts/fetch-competitor-pages.mjs`, then fill `src/content/compare.yaml` with source + date.
 - Hindi pages with `hreflang` (phase 2, planned only).
 - Real invite form provider (today: opens the visitor's email app).

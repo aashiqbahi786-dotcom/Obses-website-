@@ -15,3 +15,11 @@
 - Invite form opens the visitor's email app until a form provider is chosen.
 - Competitor cells stay "—" until verified from official pages (sites blocked from build environment on 2026-11-20).
 - URLs without trailing slash (`/pricing`), built as `.html` files for Cloudflare Pages.
+
+## 5 products (founder, 2026-11-20)
+- Site is organised around **5 products**: Website builder, Web app builder, Mobile app builder (Android; iOS later), AI Agent builder, 3D scroll animation website builder.
+- Product pages at top-level URLs: `/website-builder`, `/web-app-builder`, `/mobile-app-builder`, `/ai-agent-builder`, `/3d-website-builder`; hub at `/products`. Nav: Products · Features · Use cases · Compare · Pricing. `/product` is now "How it works".
+- Old feature URLs 301-redirect to product pages (`public/_redirects` + Astro redirects).
+- **Founder decision: all 5 products shown as available, not "Coming soon".** Risk raised by Claude: the platform repo (PROGRESS, 2026-11-20) shows Agent builder as a "Soon" placeholder and the 3D engine as "decided, not built". **Deploy gate:** before the site goes public, founder confirms both are live in the app; otherwise set `status: coming-soon` in `src/content/products.yaml` (one line each).
+- Agent builder and 3D page content comes from the founder-locked specs in the platform repo's `DECISIONS.md` (no invented numbers).
+- Other features (backends, custom domains, export, visual editor, Launchpad, APK/Play Store, Obsess AI for apps) stay "Coming soon".

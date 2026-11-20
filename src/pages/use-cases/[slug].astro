@@ -7,21 +7,19 @@ import Faq from '../../components/Faq.astro';
 import Cta from '../../components/Cta.astro';
 import { faqPage } from '../../lib/schema';
 import { staticPages } from '../../lib/pages';
+import { resolveRefs } from '../../lib/refs';
 
 export async function getStaticPaths() {
-  const [items, features] = await Promise.all([getCollection('useCases'), getCollection('features')]);
-  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry, features } }));
+  const items = await getCollection('useCases');
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 interface Props {
   entry: CollectionEntry<'useCases'>;
-  features: CollectionEntry<'features'>[];
 }
-const { entry, features } = Astro.props;
+const { entry } = Astro.props;
 const u = entry.data;
 const path = `/use-cases/${entry.id}`;
-const used = u.features
-  .map((id) => features.find((f) => f.id === id))
-  .filter((x): x is CollectionEntry<'features'> => Boolean(x));
+const used = await resolveRefs(u.features);
 ---
 <Base
   title={u.metaTitle}
@@ -54,10 +52,10 @@ const used = u.features
   </section>
 
   <section class="container-x py-8" aria-labelledby="uses">
-    <h2 id="uses" class="text-2xl font-bold">Which features does it use?</h2>
+    <h2 id="uses" class="text-2xl font-bold">Which products and features does it use?</h2>
     <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {used.map((f) => (
-        <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>
+        <li><Card href={f.href} icon={f.icon} title={f.title} text={f.text} comingSoon={f.comingSoon} /></li>
       ))}
     </ul>
   </section>

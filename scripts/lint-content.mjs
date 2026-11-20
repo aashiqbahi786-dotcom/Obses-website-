@@ -30,11 +30,15 @@ for (const [id, f] of Object.entries(features)) {
 
 // 3. Related/feature references must exist.
 const useCases = load('use-cases.yaml');
-for (const [id, f] of Object.entries(features)) for (const r of f.related ?? []) if (!features[r]) errors.push(`features/${id}: unknown related "${r}"`);
-for (const [id, u] of Object.entries(useCases)) for (const r of u.features) if (!features[r]) errors.push(`use-cases/${id}: unknown feature "${r}"`);
+const products = load('products.yaml');
+const known = (r) => features[r] || products[r];
+for (const [id, f] of Object.entries(features)) for (const r of f.related ?? []) if (!known(r)) errors.push(`features/${id}: unknown related "${r}"`);
+for (const [id, u] of Object.entries(useCases)) for (const r of u.features) if (!known(r)) errors.push(`use-cases/${id}: unknown ref "${r}"`);
+for (const [id, p] of Object.entries(products)) for (const r of p.features) if (!features[r]) errors.push(`products/${id}: unknown feature "${r}"`);
+for (const id of Object.keys(products)) if (features[id]) errors.push(`id "${id}" is both a product and a feature`);
 
 // 4. Banned social-proof phrases anywhere in content.
-const all = JSON.stringify([features, useCases, compare, load('faq.yaml')]);
+const all = JSON.stringify([products, features, useCases, compare, load('faq.yaml')]);
 for (const phrase of ['trusted by', 'testimonial', 'customers love', '5-star', 'thousands of users', 'millions of'])
   if (all.toLowerCase().includes(phrase)) errors.push(`banned phrase in content: "${phrase}"`);
 

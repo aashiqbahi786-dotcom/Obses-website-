@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Card from '../components/Card.astro';
+import Cta from '../components/Cta.astro';
+import { staticPages } from '../lib/pages';
+import { sortedProducts } from '../lib/refs';
+
+const meta = staticPages.products;
+const products = await sortedProducts();
+---
+<Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
+  <PageHeader
+    title="Five products, one chat"
+    answer="Obsess has five products: an AI website builder, a web app builder, a mobile app builder for Android, an AI agent builder and a 3D scroll animation website builder. All of them work the same way — you describe what you want in your own language, and Obsess builds it."
+  />
+  <section class="container-x py-6">
+    <h2 class="sr-only">All products</h2>
+    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((p) => (
+        <li><Card href={`/${p.id}`} icon={p.data.icon} title={p.data.name} text={p.data.tagline} comingSoon={p.data.status === 'coming-soon'} headingLevel="h3" /></li>
+      ))}
+    </ul>
+    <p class="mt-8 text-muted">Want the details of how the builder works? See <a href="/product" class="text-accent underline">how Obsess works</a> or <a href="/features" class="text-accent underline">all features</a>.</p>
+  </section>
+  <Cta />
+</Base>

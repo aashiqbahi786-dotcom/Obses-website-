@@ -16,9 +16,9 @@ export const usps = [
   },
   {
     icon: 'layers',
-    title: 'Websites, web apps and Android apps in one place',
-    text: 'One chat for all three — no second tool for mobile.',
-    meaning: 'Start with a website, add an Android app later, with the same way of working.',
+    title: 'Five products in one place',
+    text: 'Websites, web apps, Android apps, AI agents and 3D scroll websites — one chat for all five.',
+    meaning: 'Start with a website, add an Android app or an AI agent later, with the same way of working.',
     roadmap: false,
   },
   {

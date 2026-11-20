@@ -10,18 +10,15 @@ import { staticPages } from '../lib/pages';
 import { faqPage, softwareApplication } from '../lib/schema';
 import { usps, steps } from '../lib/usp';
 import { latestRun } from '../lib/benchmarks';
+import { sortedProducts } from '../lib/refs';
 
 const meta = staticPages.home;
 const faq = (await getEntry('faq', 'home'))!.data.items;
 const useCases = (await getCollection('useCases')).sort((a, b) => a.data.order - b.data.order);
 const competitors = (await getCollection('compare')).sort((a, b) => a.data.order - b.data.order);
 const answer =
-  'Obsess is an AI app builder for people who do not code. Describe your idea in plain words — English, Hinglish, Hindi or Banglish — and an AI agent plans, builds, checks, previews and publishes a working website, web app or Android app. It works from your phone, and you see the cost before every task.';
-const builds = [
-  { icon: 'globe', title: 'Websites', text: 'Business pages, menus, portfolios and landing pages.', href: '/features/ai-website-builder' },
-  { icon: 'app-window', title: 'Web apps', text: 'Interactive React apps: trackers, calculators, booking pages.', href: '/features/ai-web-app-builder' },
-  { icon: 'smartphone', title: 'Android apps', text: 'React Native + Expo apps in a phone-frame preview.', href: '/features/android-app-builder' },
-];
+  'Obsess is an AI builder for people who do not code. Describe your idea in plain words — English, Hinglish, Hindi or Banglish — and Obsess builds a website, web app, Android app, AI agent or 3D scroll website, checks it and publishes it. It works from your phone, and you see the cost before every task.';
+const products = await sortedProducts();
 const strip = latestRun.results.filter((r) => ['android-requirements', 'android-preview', 'publishing'].includes(r.id));
 ---
 <Base
@@ -35,7 +32,7 @@ const strip = latestRun.results.filter((r) => ['android-requirements', 'android-
       <span class="h-2 w-2 rounded-full bg-accent" aria-hidden="true"></span> Invite-only Alpha
     </p>
     <h1 class="mt-5 max-w-4xl text-4xl font-extrabold md:text-6xl">
-      Build a website, web app or Android app by just describing it
+      Build websites, apps, AI agents and 3D sites by just describing them
     </h1>
     <p data-answer class="mt-6 max-w-3xl text-lg text-muted md:text-xl">{answer}</p>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -63,10 +60,13 @@ const strip = latestRun.results.filter((r) => ['android-requirements', 'android-
   </section>
 
   <section class="container-x py-12" aria-labelledby="what">
-    <SectionHeader id="what" title="What can I build with Obsess?" intro="Websites, web apps and Android apps — from the same chat." />
-    <div class="mt-8 grid gap-4 md:grid-cols-3">
-      {builds.map((b) => <Card {...b} />)}
-    </div>
+    <SectionHeader id="what" title="What can I build with Obsess?" intro="Five products, one chat." />
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((p) => (
+        <li><Card href={`/${p.id}`} icon={p.data.icon} title={p.data.name} text={p.data.tagline} comingSoon={p.data.status === 'coming-soon'} /></li>
+      ))}
+    </ul>
+    <p class="mt-6"><a href="/products" class="font-semibold text-accent underline underline-offset-2">All products</a></p>
   </section>
 
   <section class="container-x py-12" aria-labelledby="why">

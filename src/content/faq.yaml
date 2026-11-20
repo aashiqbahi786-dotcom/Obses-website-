@@ -3,11 +3,15 @@
 home:
   items:
     - q: What is Obsess?
-      a: Obsess is an AI app builder. You describe an idea in plain words — in English, Hinglish, Hindi or Banglish — and an AI agent plans, builds, checks, previews and publishes a working website, web app or Android app.
+      a: Obsess is an AI builder with five products — a website builder, web app builder, Android app builder, AI agent builder and 3D scroll website builder. You describe an idea in plain words, in English, Hinglish, Hindi or Banglish, and Obsess builds, checks, previews and publishes it.
     - q: Do I need to know coding?
       a: No. Obsess is made for non-coders. You chat with the AI; it writes and checks the code.
     - q: Can I build in Hindi or Hinglish?
       a: Yes. The AI replies in the language and script you write in, including Hinglish, Hindi in Devanagari, Banglish and English.
+    - q: Can I build an AI agent for my business?
+      a: Yes. The AI agent builder starts from templates — customer support, business automation, data analysis or personal assistant — that you customize by form, chat or an advanced editor.
+    - q: What is a 3D scroll website?
+      a: A website where scrolling drives a 3D story — camera moves, turning products and scene changes. Obsess builds them with ready kits and a timeline editor.
     - q: Can I build an Android app without coding?
       a: Yes. Obsess builds Android apps with React Native and Expo and shows them in a phone-frame preview. APK download and Play Store publishing are coming soon.
     - q: Do I own what I build?
@@ -20,7 +24,7 @@ home:
 product:
   items:
     - q: What does Obsess build?
-      a: Websites and web apps (React) and Android apps (React Native with Expo), from a description in your own language.
+      a: Websites, web apps (React), Android apps (React Native with Expo), AI agents and 3D scroll animation websites, from a description in your own language.
     - q: How does the AI check its work?
       a: Every change is checked with a typecheck and a build before it is saved. Runtime errors in the preview get a Fix with AI button.
     - q: How are credits used?
@@ -29,7 +33,7 @@ product:
 why-obsess:
   items:
     - q: How is Obsess different from other AI app builders?
-      a: It is built for non-coders in their own language, works fully from a phone, builds Android apps as well as web, verifies changes with a build before saving, and shows the cost before every task.
+      a: It is built for non-coders in their own language, works fully from a phone, offers five builders in one place — websites, web apps, Android apps, AI agents and 3D websites — verifies changes with a build before saving, and shows the cost before every task.
     - q: Is everything on this page available today?
       a: No. Ownership (export) and Launchpad are on the roadmap and are labelled Coming soon.
 

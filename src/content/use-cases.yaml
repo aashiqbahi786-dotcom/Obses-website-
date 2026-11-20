@@ -18,7 +18,7 @@ restaurant:
     - A simple Android menu app with a phone-frame preview
   promptHinglish: Mera chhota restaurant hai Kolkata mein. Ek website banado jisme menu, timings aur location ho. Menu PDF attach kar raha hu.
   promptEnglish: I run a small restaurant in Kolkata. Build a website with our menu, timings and location. I am attaching the menu PDF.
-  features: [ai-website-builder, voice-and-pdf-input, photo-to-app, publish-and-hosting]
+  features: [website-builder, voice-and-pdf-input, photo-to-app, publish-and-hosting]
   faq:
     - q: Can customers order online?
       a: Saving orders needs a database, which is coming soon under App backends. Today you can show the menu and a contact button.
@@ -41,7 +41,7 @@ cafe-tea:
     - A design based on a photo you like
   promptHinglish: Meri chai ki dukaan hai. Ek simple website banao — menu, rates, aur Google Maps ka location.
   promptEnglish: I have a tea stall. Make a simple website with the menu, prices and our Google Maps location.
-  features: [ai-website-builder, photo-to-app, publish-and-hosting]
+  features: [website-builder, photo-to-app, publish-and-hosting]
 
 eggs-farm-food:
   order: 3
@@ -61,7 +61,7 @@ eggs-farm-food:
     - A simple Android app version with phone-frame preview
   promptHinglish: Mera eggs business hai, website banado. Desi aur farm eggs dono bechta hu, rates aur delivery areas dikhane hai.
   promptEnglish: I have an eggs business, build me a website. I sell both country and farm eggs and want to show rates and delivery areas.
-  features: [ai-website-builder, android-app-builder, publish-and-hosting]
+  features: [website-builder, mobile-app-builder, publish-and-hosting]
   faq:
     - q: Can the website take orders?
       a: Storing orders needs a database (coming soon). Today, add a call or WhatsApp button so customers can order directly.
@@ -84,7 +84,7 @@ car-rental:
     - Rate list from your PDF
   promptHinglish: Meri car rental service hai Jaipur mein. 6 gaadiyan hai, unke photo aur per-day rate ke saath website banao.
   promptEnglish: I run a car rental service in Jaipur with 6 cars. Build a website with their photos and per-day rates.
-  features: [ai-website-builder, voice-and-pdf-input, publish-and-hosting]
+  features: [website-builder, voice-and-pdf-input, publish-and-hosting]
   faq:
     - q: Can customers book online?
       a: Online booking needs a database (coming soon). Today, link a call or WhatsApp button for enquiries.
@@ -107,7 +107,7 @@ mobile-shop:
     - Shop location and contact
   promptHinglish: Mera mobile shop hai. Website banao jisme naye phones, accessories, repair services aur is hafte ke offers ho.
   promptEnglish: I own a mobile shop. Build a website with new phones, accessories, repair services and this week's offers.
-  features: [ai-website-builder, voice-and-pdf-input, live-preview-version-history-undo, publish-and-hosting]
+  features: [website-builder, voice-and-pdf-input, live-preview-version-history-undo, publish-and-hosting]
 
 retail:
   order: 6
@@ -127,7 +127,7 @@ retail:
     - Contact and enquiry buttons
   promptHinglish: Meri kapdon ki dukaan hai. Ek website banao jisme kurta, saree aur shirts ki categories aur price ho.
   promptEnglish: I have a clothing shop. Build a website with categories for kurtas, sarees and shirts, with prices.
-  features: [ai-website-builder, photo-to-app, live-preview-version-history-undo, publish-and-hosting]
+  features: [website-builder, photo-to-app, live-preview-version-history-undo, publish-and-hosting]
   faq:
     - q: Is this an online store with payments?
       a: Not yet. Payments and saving orders need app backends, which are coming soon.
@@ -150,7 +150,7 @@ creators:
     - Brand-deal and contact section
   promptHinglish: Main ek food creator hu YouTube aur Instagram pe. Mere liye ek stylish link page banao, mere top videos ke saath.
   promptEnglish: I'm a food creator on YouTube and Instagram. Build me a stylish link page with my top videos.
-  features: [ai-website-builder, photo-to-app, publish-and-hosting]
+  features: [website-builder, photo-to-app, publish-and-hosting]
 
 students:
   order: 8
@@ -170,7 +170,7 @@ students:
     - A landing page for a club or event
   promptHinglish: College project ke liye ek Android app chahiye jo attendance track kare. Pehle plan discuss karte hai.
   promptEnglish: I need an Android app for a college project that tracks attendance. Let's discuss the plan first.
-  features: [brainstorm-and-build-modes, android-app-builder, ai-web-app-builder]
+  features: [brainstorm-and-build-modes, mobile-app-builder, web-app-builder]
   faq:
     - q: Can my app save attendance data?
       a: Saving data needs a database, which is coming soon. Today the app can work on screen during a session.
@@ -193,7 +193,7 @@ startup-mvp:
     - A shareable published link
   promptHinglish: Mera idea hai — local tutors ko students se connect karna. Ek MVP web app banao jisme tutor list aur filter ho.
   promptEnglish: My idea connects local tutors with students. Build an MVP web app with a tutor list and filters.
-  features: [brainstorm-and-build-modes, ai-web-app-builder, android-app-builder, credit-estimate-before-every-task]
+  features: [brainstorm-and-build-modes, web-app-builder, mobile-app-builder, credit-estimate-before-every-task]
   faq:
     - q: Will the MVP have user accounts?
       a: Login and database are coming soon under App backends.
@@ -216,7 +216,7 @@ agencies:
     - Quick changes during client calls
   promptHinglish: Client ka brief attach kiya hai — dental clinic ke liye 4 page website, blue aur white theme.
   promptEnglish: Client brief attached — a 4-page website for a dental clinic, blue and white theme.
-  features: [ai-website-builder, voice-and-pdf-input, photo-to-app, live-preview-version-history-undo]
+  features: [website-builder, voice-and-pdf-input, photo-to-app, live-preview-version-history-undo]
   faq:
     - q: Can I hand the code to my client?
       a: Export to zip and GitHub is coming soon.

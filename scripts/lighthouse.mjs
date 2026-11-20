@@ -6,7 +6,7 @@ import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 
 const base = process.env.BASE_URL ?? 'http://localhost:4321';
-const pages = ['/', '/product', '/features/android-app-builder', '/use-cases/eggs-farm-food', '/compare/lovable', '/pricing', '/benchmarks'];
+const pages = ['/', '/product', '/mobile-app-builder', '/ai-agent-builder', '/3d-website-builder', '/use-cases/eggs-farm-food', '/compare/lovable', '/pricing', '/benchmarks'];
 const cats = ['performance', 'accessibility', 'best-practices', 'seo'];
 
 const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless=new', '--no-sandbox'], chromePath: process.env.CHROME_PATH });

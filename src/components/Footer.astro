@@ -3,10 +3,7 @@ import { site } from '../config/site';
 import Logo from './Logo.astro';
 import { getCollection } from 'astro:content';
 
-const features = (await getCollection('features'))
-  .filter((f) => f.data.status === 'available')
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 6);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
 const useCases = (await getCollection('useCases')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
 const year = new Date().getFullYear();
 ---
@@ -14,13 +11,13 @@ const year = new Date().getFullYear();
   <div class="container-x grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
     <div class="lg:col-span-2">
       <a href="/" class="flex items-center gap-2 font-bold text-lg"><Logo /></a>
-      <p class="mt-3 max-w-xs text-sm text-muted">{site.tagline} Websites, web apps and Android apps from a description in your own language.</p>
+      <p class="mt-3 max-w-xs text-sm text-muted">{site.tagline} Websites, web apps, Android apps, AI agents and 3D websites from a description in your own language.</p>
       <p class="mt-3 text-sm text-muted">{site.status}</p>
     </div>
-    <nav aria-label="Features">
-      <h2 class="text-sm font-semibold">Features</h2>
+    <nav aria-label="Products">
+      <h2 class="text-sm font-semibold">Products</h2>
       <ul class="mt-3 space-y-2 text-sm">
-        {features.map((f) => <li><a class="text-muted hover:text-fg" href={`/features/${f.id}`}>{f.data.shortTitle}</a></li>)}
+        {products.map((p) => <li><a class="text-muted hover:text-fg" href={`/${p.id}`}>{p.data.shortName}</a></li>)}
         <li><a class="text-muted hover:text-fg" href="/features">All features</a></li>
       </ul>
     </nav>
@@ -34,6 +31,7 @@ const year = new Date().getFullYear();
     <nav aria-label="Company">
       <h2 class="text-sm font-semibold">Company</h2>
       <ul class="mt-3 space-y-2 text-sm">
+        <li><a class="text-muted hover:text-fg" href="/product">How it works</a></li>
         <li><a class="text-muted hover:text-fg" href="/why-obsess">Why Obsess</a></li>
         <li><a class="text-muted hover:text-fg" href="/compare">Compare</a></li>
         <li><a class="text-muted hover:text-fg" href="/benchmarks">Benchmarks</a></li>

@@ -43,6 +43,7 @@ const isActive = (href: string) => current === href || current.startsWith(href +
             {nav.map((item) => (
               <li><a href={item.href} class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">{item.label}</a></li>
             ))}
+            <li><a href="/product" class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">How it works</a></li>
             <li><a href="/why-obsess" class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">Why Obsess</a></li>
             <li><a href="/benchmarks" class="block rounded-sm px-3 py-3 font-medium hover:bg-surface">Benchmarks</a></li>
             <li class="pt-2"><a href="/invite" class="block rounded-sm bg-accent px-3 py-3 text-center font-semibold text-accent-contrast">Request an invite</a></li>

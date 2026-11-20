@@ -22,6 +22,28 @@ const features = defineCollection({
   }),
 });
 
+const products = defineCollection({
+  loader: file('src/content/products.yaml'),
+  schema: z.object({
+    order: z.number(),
+    status: z.enum(['available', 'coming-soon']),
+    name: z.string(),
+    shortName: z.string(),
+    title: z.string(),
+    metaTitle: z.string().max(60),
+    description: z.string().max(155),
+    icon: z.string(),
+    tagline: z.string(),
+    answer: z.string(),
+    gets: z.array(z.string()),
+    sections: z.array(qa),
+    promptHinglish: z.string(),
+    promptEnglish: z.string(),
+    features: z.array(z.string()),
+    faq: z.array(qa).default([]),
+  }),
+});
+
 const useCases = defineCollection({
   loader: file('src/content/use-cases.yaml'),
   schema: z.object({
@@ -69,4 +91,4 @@ const faq = defineCollection({
   schema: z.object({ items: z.array(qa) }),
 });
 
-export const collections = { features, useCases, compare, faq };
+export const collections = { products, features, useCases, compare, faq };

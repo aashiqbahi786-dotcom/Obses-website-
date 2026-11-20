@@ -7,6 +7,7 @@ import { latestRun } from './benchmarks';
 const abs = (p: string) => new URL(p, site.url).toString();
 
 export async function buildLlmsTxt(full: boolean): Promise<string> {
+  const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
   const features = (await getCollection('features')).sort((a, b) => a.data.order - b.data.order);
   const useCases = (await getCollection('useCases')).sort((a, b) => a.data.order - b.data.order);
   const compare = (await getCollection('compare')).sort((a, b) => a.data.order - b.data.order);
@@ -16,13 +17,18 @@ export async function buildLlmsTxt(full: boolean): Promise<string> {
   const out: string[] = [];
   out.push(`# ${site.name}`, '');
   out.push(
-    `> ${site.name} is an AI app builder. A person describes an idea in plain words (English, Hinglish, Hindi, Banglish) and an AI agent plans, builds, checks, previews and publishes a working website, web app (React) or Android app (React Native + Expo). Status: ${site.status}.`,
+    `> ${site.name} is an AI builder with five products: website builder, web app builder (React), mobile app builder (Android, React Native + Expo), AI agent builder and 3D scroll animation website builder. A person describes an idea in plain words (English, Hinglish, Hindi, Banglish) and ${site.name} builds, checks, previews and publishes it. Status: ${site.status}.`,
     '',
   );
   out.push('Facts on this site follow strict rules: features marked "Coming soon" are not available; numbers come only from dated internal evals; competitor facts are sourced and dated or shown as "—".', '');
 
   out.push('## Main pages', '');
   for (const p of Object.values(staticPages)) out.push(`- [${p.label}](${abs(p.path)}): ${p.description}`);
+  out.push('');
+
+  out.push('## Products', '');
+  for (const p of products)
+    out.push(`- [${p.data.name}](${abs(`/${p.id}`)})${p.data.status === 'coming-soon' ? ' (coming soon)' : ''}: ${full ? p.data.answer : p.data.tagline}`);
   out.push('');
 
   out.push('## Features available now', '');

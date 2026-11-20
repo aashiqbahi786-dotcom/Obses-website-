@@ -13,7 +13,9 @@ export function walk(dir, ext) {
   return out;
 }
 
-export const htmlFiles = () => walk(DIST, '.html');
+/** Built pages, excluding Astro redirect stubs (meta refresh, noindex). */
+export const isRedirectStub = (html) => /<meta http-equiv="refresh"/.test(html);
+export const htmlFiles = () => walk(DIST, '.html').filter((f) => !isRedirectStub(readFileSync(f, 'utf8')));
 export const read = (p) => readFileSync(p, 'utf8');
 export const rel = (p) => '/' + relative(DIST, p);
 

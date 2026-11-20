@@ -1,0 +1,6 @@
+# Astro redirect stubs (old feature URLs → product pages)
+dist/features/ai-website-builder.html
+dist/features/ai-web-app-builder.html
+dist/features/android-app-builder.html
+dist/features/ai-agents.html
+dist/features/premium-3d-storytelling-websites.html

@@ -1,0 +1,181 @@
+# The 5 Obsess products. `status` is the single switch for "available" vs "coming-soon".
+# Founder decision 2026-11-20: all five shown as available.
+# Agent builder + 3D facts come from the platform repo's DECISIONS.md (founder-locked specs).
+
+website-builder:
+  order: 1
+  status: available
+  name: AI Website Builder
+  shortName: Website builder
+  title: AI website builder — describe it, Obsess builds it
+  metaTitle: AI Website Builder — Describe It, Obsess Builds It
+  description: Describe your website in English, Hinglish, Hindi or Banglish. Obsess builds it, checks it and publishes it in one tap. No coding needed.
+  icon: globe
+  tagline: Business sites, menus, portfolios and landing pages from a description.
+  answer: >-
+    The Obsess AI website builder turns a plain description into a working website. You write what
+    you need, in English, Hinglish, Hindi or Banglish, and the AI plans the pages, writes the code,
+    checks that it builds and shows it in a live preview. It is made for shop owners, creators and anyone who does not code.
+  gets:
+    - Multi-page websites, menus, portfolios and landing pages
+    - Design from a photo or screenshot you like
+    - Your real details from a PDF, such as a menu or price list
+    - SEO basics and one-tap publishing to a free address
+  sections:
+    - q: How do I build a website without coding?
+      a: Open a chat, describe your business and what the site should show, and send. Obsess plans the pages, writes them and shows the result in a live preview. Ask for changes in the same chat, then publish.
+    - q: Can I write my request in Hinglish or Hindi?
+      a: Yes. The AI replies in the language and script you use, including Hinglish, Hindi in Devanagari, Banglish and English.
+    - q: Does the website work on phones?
+      a: Obsess is phone-first. You can build, preview and publish from a phone, and you should check the preview on your own phone before publishing.
+  promptHinglish: Mera eggs business hai, website banado. Rates aur delivery areas dikhane hai.
+  promptEnglish: I have an eggs business, build me a website showing rates and delivery areas.
+  features: [photo-to-app, voice-and-pdf-input, publish-and-hosting, live-preview-version-history-undo]
+  faq:
+    - q: Can I make the website look like a design I like?
+      a: Yes. Upload a photo or screenshot and ask for a similar design. Use it as inspiration, not to copy another brand.
+
+web-app-builder:
+  order: 2
+  status: available
+  name: AI Web App Builder
+  shortName: Web app builder
+  title: AI web app builder — interactive apps by chat
+  metaTitle: AI Web App Builder — Build React Apps by Chat
+  description: Build a working web app by describing it. Obsess writes a React app, checks that it builds, and shows it in a live preview you can publish.
+  icon: app-window
+  tagline: Trackers, calculators, booking pages and business tools.
+  answer: >-
+    The Obsess AI web app builder creates interactive web apps from a description. You explain what
+    the app should do, and the AI writes a React app, runs a typecheck and a build before saving,
+    and shows it in a live preview. It suits tools, trackers, calculators and simple business apps.
+  gets:
+    - Interactive React web apps
+    - Every change checked with a typecheck and a build before saving
+    - Fix with AI for errors in the preview
+    - Version history with one-tap Undo
+  sections:
+    - q: What is the difference between a website and a web app?
+      a: A website mostly shows information. A web app does things — it takes input, calculates, filters or keeps track of something on screen. Obsess builds both from the same chat.
+    - q: How does Obsess make sure the app works?
+      a: Every change is checked with a typecheck and a build before it is saved. If the preview shows a runtime error, a Fix with AI button lets the AI repair it.
+  promptHinglish: Ek tutor finder app banao jisme tutors ki list, subject filter aur fees dikhe.
+  promptEnglish: Build a tutor finder app with a list of tutors, a subject filter and fees.
+  features: [fix-with-ai, live-preview-version-history-undo, brainstorm-and-build-modes, app-backends]
+  faq:
+    - q: Which technology does Obsess use for web apps?
+      a: React. You do not need to know it; you only describe what you want.
+
+mobile-app-builder:
+  order: 3
+  status: available
+  name: AI Mobile App Builder
+  shortName: Mobile app builder
+  title: Mobile app builder — Android apps without coding
+  metaTitle: Mobile App Builder — Android Apps Without Coding
+  description: Describe an Android app in your own words and see it running in a phone-frame preview. Obsess builds it with React Native and Expo.
+  icon: smartphone
+  tagline: Android apps with a phone-frame preview. iOS later.
+  answer: >-
+    Obsess builds Android apps from a plain description, without coding. You describe the app in
+    your own language, and the AI builds it with React Native and Expo and shows it running in a
+    phone-frame preview. In an internal eval on 2026-11-19 (30 apps from 10 requests), all 30 met
+    every requirement, checked in a real browser.
+  gets:
+    - Android apps built with React Native and Expo
+    - Phone-frame preview inside the builder
+    - Requests in Hinglish, Hindi, Banglish or English
+  sections:
+    - q: Can I build an Android app without coding?
+      a: Yes. Describe the screens and what the app should do. Obsess writes the app and shows it in a phone frame so you can tap through it.
+    - q: How fast do I see the app?
+      a: In our internal eval (10 requests, 2026-11-19), the Android preview was running within 3 minutes in 10 of 10 cases, with a median of 25.6 seconds. See Benchmarks for the method and limits.
+    - q: Does it make iPhone apps?
+      a: Not yet. Obsess builds Android apps today; iOS comes later.
+  promptHinglish: College attendance ke liye ek Android app banao — student list aur present/absent button.
+  promptEnglish: Build an Android app for college attendance with a student list and present/absent buttons.
+  features: [android-apk-play-store-publishing, live-preview-version-history-undo, photo-to-app, brainstorm-and-build-modes]
+  faq:
+    - q: Can I put the app on the Play Store?
+      a: APK download and Play Store publishing are coming soon.
+    - q: Do I need an Android phone?
+      a: No. The preview runs in a phone frame inside the builder.
+
+ai-agent-builder:
+  order: 4
+  status: available
+  name: AI Agent Builder
+  shortName: AI agent builder
+  title: AI agent builder — agents for your business, without code
+  metaTitle: AI Agent Builder — Business AI Agents Without Code
+  description: Build AI agents for customer support, business automation, data analysis or personal assistance from templates. Customize by form, chat or editor.
+  icon: bot
+  tagline: Support, automation, data and assistant agents from templates.
+  answer: >-
+    The Obsess AI agent builder lets you create AI agents without code. Start from a template —
+    customer support, business automation, data analysis or personal assistant — then customize it
+    with a simple form, by chatting, or in an advanced editor. Test it in a chat panel and connect
+    it to the apps you build, with permissions you control.
+  gets:
+    - Templates for customer support, business automation, data analysis and personal assistant
+    - Three ways to customize — a simple form, chat, or an advanced visual editor
+    - A chat test panel to try the agent before it goes live
+    - Connections to your Obsess apps through permission-controlled access
+    - Safety rules such as approval before sensitive actions
+  sections:
+    - q: How do I build an AI agent without coding?
+      a: Pick a template, then set the name, tone, language, welcome message and the documents it should know. Test it in the chat panel and adjust until it answers the way you want.
+    - q: How can I customize the agent?
+      a: Three levels. A basic form for name, avatar, tone, language, welcome message and documents. Chat, where you say "do X when Y" and the AI updates the agent. And an advanced editor for instructions, tools, workflow steps, model and permissions.
+    - q: Can the agent use my app's data?
+      a: Agents connect to apps built with Obsess through permission-controlled access, never through direct database passwords. You choose what it may read or change, and sensitive actions can require your approval.
+    - q: Can I reuse an agent I made?
+      a: Yes. Save a customized agent as your own template.
+  promptHinglish: Mere restaurant ke liye ek customer support agent banao jo menu, timings aur delivery ke sawaalon ka jawab de.
+  promptEnglish: Build a customer support agent for my restaurant that answers questions about the menu, timings and delivery.
+  features: [brainstorm-and-build-modes, credit-estimate-before-every-task, obsess-ai-for-apps]
+  faq:
+    - q: Can I remove the safety rules of a template?
+      a: You can make a template's safety rules stricter, but not remove them. This protects you and your customers.
+    - q: Which kinds of agents are there?
+      a: Customer support, business automation, data analysis and personal assistant templates.
+
+3d-website-builder:
+  order: 5
+  status: available
+  name: 3D Scroll Website Builder
+  shortName: 3D scroll websites
+  title: 3D scroll animation website builder
+  metaTitle: 3D Scroll Animation Website Builder — Obsess
+  description: Build a premium 3D storytelling website with scroll animation, camera moves and interactive scenes, by describing the story you want to tell.
+  icon: box
+  tagline: Cinematic 3D storytelling websites that move as visitors scroll.
+  answer: >-
+    The Obsess 3D scroll website builder creates premium websites where a 3D story unfolds as
+    visitors scroll — smooth camera moves, scene transitions and interactive 3D models. Describe
+    your brand or product story, pick a ready kit, and edit the story with a timeline editor.
+    The 3D runs in the visitor's browser and works on phones.
+  gets:
+    - Story Journey — a 3D story that unfolds as you scroll
+    - Product Hero Scroll — show a product from every angle while scrolling
+    - Variant Configurator — let visitors switch colours or versions in 3D
+    - Story Timeline Editor — edit scenes like blocks, without an AI call for every edit
+    - Ready kits for farm and food, restaurants, car rental, mobile and electronics shops, cafés and tea stalls
+    - Touch and swipe on phones, with automatic performance tuning
+  sections:
+    - q: What is a 3D scroll animation website?
+      a: A website where scrolling drives a 3D scene — the camera moves, objects turn and scenes change as the visitor scrolls, telling a story instead of showing a flat page.
+    - q: How do I edit the 3D story?
+      a: With the Story Timeline Editor, where each scene is a block you can reorder and change. Editing in the timeline does not need an AI call for every change.
+    - q: Will it work on phones?
+      a: Yes. The 3D renders in the visitor's browser, supports touch and swipe, and adjusts quality automatically for the device.
+    - q: Is the text still good for SEO?
+      a: Important text stays in the page's HTML, not only inside the 3D canvas, so search engines and AI assistants can read it.
+  promptHinglish: Mere car rental ke liye ek 3D website banao jisme scroll karne par gaadi ghoomti dikhe aur rates aaye.
+  promptEnglish: Build a 3D website for my car rental where the car turns as you scroll and the rates appear.
+  features: [publish-and-hosting, live-preview-version-history-undo, voice-and-pdf-input]
+  faq:
+    - q: Which businesses have ready kits?
+      a: Farm and food, restaurants, car rental, mobile and electronics shops, and cafés and tea stalls.
+    - q: Is the 3D a separate app?
+      a: No. It is a website, previewed in the same Obsess preview and published the same way.

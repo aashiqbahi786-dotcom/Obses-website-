@@ -11,13 +11,20 @@ export const staticPages = {
   home: {
     path: '/',
     label: 'Home',
-    title: 'Obsess — AI App Builder for Websites and Android Apps',
+    title: 'Obsess — Build Websites, Apps, AI Agents and 3D Sites',
     description:
-      'Describe your idea in English, Hinglish, Hindi or Banglish. Obsess plans, builds, checks and publishes a working website, web app or Android app.',
+      'Describe your idea in English, Hinglish, Hindi or Banglish. Obsess builds websites, web apps, Android apps, AI agents and 3D scroll websites.',
+  },
+  products: {
+    path: '/products',
+    label: 'Products',
+    title: 'Obsess Products — 5 AI Builders in One Place',
+    description:
+      'Website builder, web app builder, Android app builder, AI agent builder and 3D scroll website builder. Describe it in your language; Obsess builds it.',
   },
   product: {
     path: '/product',
-    label: 'Product',
+    label: 'How it works',
     title: 'Product — How the Obsess AI App Builder Works',
     description:
       'The Obsess builder in detail: Brainstorm and Build modes, text, photo, voice and PDF input, live preview, checks, publishing and credits.',
@@ -27,7 +34,7 @@ export const staticPages = {
     label: 'Features',
     title: 'Features — Everything Obsess Can Do, and What Is Next',
     description:
-      'All Obsess features: website, web app and Android app building, preview, Fix with AI, publishing, security scan, plus what is coming soon.',
+      'All Obsess features: Brainstorm and Build, photo, voice and PDF input, preview, Fix with AI, publishing, security scan, plus what is coming soon.',
   },
   useCases: {
     path: '/use-cases',
@@ -41,7 +48,7 @@ export const staticPages = {
     label: 'Why Obsess',
     title: 'Why Obsess — 7 Ways It Is Different',
     description:
-      'Built for non-coders in their own language, phone-first, web and Android in one place, honest checks and clear cost. Plus what is on the roadmap.',
+      'Built for non-coders in their own language, phone-first, five products in one place, honest checks and clear cost. Plus what is on the roadmap.',
   },
   compare: {
     path: '/compare',
