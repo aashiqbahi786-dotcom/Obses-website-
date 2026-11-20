@@ -23,3 +23,7 @@
 - **Founder decision: all 5 products shown as available, not "Coming soon".** Risk raised by Claude: the platform repo (PROGRESS, 2026-11-20) shows Agent builder as a "Soon" placeholder and the 3D engine as "decided, not built". **Deploy gate:** before the site goes public, founder confirms both are live in the app; otherwise set `status: coming-soon` in `src/content/products.yaml` (one line each).
 - Agent builder and 3D page content comes from the founder-locked specs in the platform repo's `DECISIONS.md` (no invented numbers).
 - Other features (backends, custom domains, export, visual editor, Launchpad, APK/Play Store, Obsess AI for apps) stay "Coming soon".
+
+## Go-live prep (founder, 2026-11-20)
+- `main` created from the session branch; Cloudflare Pages production branch = `main`.
+- Founder: 3D website builder (and all 5 products) stay "available" on the site; other details to be changed later by the founder.

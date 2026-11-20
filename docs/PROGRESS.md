@@ -32,7 +32,7 @@ _Last updated: 2026-11-20_
 - 51 pages + 5 redirect stubs. All checks pass. Lighthouse mobile 100/100/100/100 on 9 key pages incl. the 3 new product pages (local preview).
 
 ## Pending
-- **Deploy gate:** founder confirms AI Agent builder and 3D website builder are live in the app (repo says not built yet). If not, flip their `status` to `coming-soon` before deploy.
+- `main` branch created (2026-11-20) for Cloudflare Pages. Founder chose to keep all 5 products "available" (incl. 3D and Agent builder).
 - **Competitor facts:** official sites (lovable.dev, bolt.new, replit.com, v0.app, emergent.sh, dora.run) are blocked by this environment's network, so every competitor cell shows "—". Once reachable: `node scripts/fetch-competitor-pages.mjs`, then fill `src/content/compare.yaml` with source + date.
 - Hindi pages with `hreflang` (phase 2, planned only).
 - Real invite form provider (today: opens the visitor's email app).
