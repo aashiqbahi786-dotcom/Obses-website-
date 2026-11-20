@@ -24,4 +24,4 @@ Static marketing site for Obsess (AI app builder). Astro 5 + TypeScript + Tailwi
 See `CLAUDE.md`. In short: no unsourced numbers, "Coming soon" always labelled, no fake social proof, competitor facts only from official pages with a date (otherwise "—"). `npm run lint:content` enforces the compare rule.
 
 ## Deploy (not done yet — needs founder approval)
-Cloudflare Pages: build command `npm run build`, output directory `dist`, Node 22. Security and cache headers are in `public/_headers`.
+Cloudflare Workers (static assets): build command `npm run build`, deploy command `npx wrangler deploy` (reads `wrangler.jsonc`, Worker name `obses-website`), build variable `NODE_VERSION=22`. Security/cache headers in `public/_headers`, redirects in `public/_redirects`.
