@@ -42,7 +42,12 @@ _Last updated: 2026-11-20_
 - 53 pages; all checks pass; Lighthouse mobile 100 on 9 key pages (local; `is-crawlable` skipped in pre-launch).
 
 ## Pending
-- **Launch day:** set `prelaunch: false` and the real domain/email in `src/config/site.ts`.
+- **Launch day checklist (one file: `src/config/site.ts`):**
+  1. `domain` → real domain (canonical URLs, sitemap, OG images, JSON-LD and llms.txt all read it).
+  2. `contactEmail` → real email.
+  3. `prelaunch: false` → removes the `X-Robots-Tag: noindex` header, the noindex meta, and puts the sitemap back in robots.txt.
+  4. Cloudflare: add the custom domain to the `obses-website` Worker; then submit the sitemap in Google Search Console.
+- Pre-launch protection on the temporary workers.dev address (2026-11-20): `X-Robots-Tag: noindex` header + noindex meta; robots.txt allows crawling so search engines can see the noindex.
 - **Graph savings %:** run Graph ON/OFF benchmark in the platform; publish the result on /benchmarks only after that.
 - `main` branch created (2026-11-20) for Cloudflare Pages. Founder chose to keep all 5 products "available" (incl. 3D and Agent builder).
 - **Competitor facts (done 2026-11-20):** official pages of Lovable, Bolt.new, Replit, v0 and Emergent fetched and saved as evidence in `reports/competitors/<id>/2026-11-20/`; 32 table cells and 10 "where they are stronger" notes filled, each with source + date. Unclear facts stay "—". **Dora AI:** dora.run unreachable, all cells "—". Refresh with `NODE_USE_ENV_PROXY=1 node scripts/fetch-competitor-pages.mjs`.

@@ -6,7 +6,8 @@ const aiCrawlers = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Cla
 
 export const GET: APIRoute = () => {
   if (site.prelaunch) {
-    return new Response('# Pre-launch: not open to crawlers yet.\nUser-agent: *\nDisallow: /\n', {
+    // Crawling stays allowed so search engines can see the noindex header/meta and drop the pages.
+    return new Response('# Pre-launch: pages are noindex (X-Robots-Tag + meta) until the real domain is live.\nUser-agent: *\nAllow: /\n', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8' },
     });
   }

@@ -3,7 +3,19 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import { appendFileSync } from 'node:fs';
 import { site } from './src/config/site.ts';
+
+/** Pre-launch: add `X-Robots-Tag: noindex` to every response via dist/_headers. */
+const prelaunchHeaders = {
+  name: 'prelaunch-noindex-header',
+  hooks: {
+    'astro:build:done': ({ dir }) => {
+      if (!site.prelaunch) return;
+      appendFileSync(new URL('_headers', dir), '\n# Pre-launch (site.prelaunch = true): keep the temporary address out of search results.\n/*\n  X-Robots-Tag: noindex\n');
+    },
+  },
+};
 
 export default defineConfig({
   site: site.url,
@@ -20,6 +32,7 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
+    prelaunchHeaders,
     sitemap({ filter: (page) => !page.includes('/404') && !/\/features\/(ai-website-builder|ai-web-app-builder|android-app-builder|ai-agents|premium-3d-storytelling-websites)$/.test(page) }),
   ],
   // Cast: @tailwindcss/vite is typed against a newer Vite than Astro 5 bundles; works at runtime.

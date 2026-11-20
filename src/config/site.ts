@@ -24,8 +24,10 @@ export const site = {
   placeholders: true,
   /**
    * Pre-launch: the site is built ahead of the product launch (founder 2026-11-20).
-   * While true, every page is `noindex` and robots.txt blocks crawlers.
-   * Set to false on launch day, together with the real domain.
+   * While true: `X-Robots-Tag: noindex` header (added to dist/_headers at build),
+   * `<meta name="robots" content="noindex">` on every page, and no sitemap in robots.txt.
+   * Launch day: set `domain` above to the real domain (canonical, sitemap, OG and
+   * JSON-LD all read it) and set this to false.
    */
   prelaunch: true,
 } as const;

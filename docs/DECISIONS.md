@@ -39,3 +39,7 @@
 - **No token-saving % on the site.** Founder asked for "70%"; the platform DECISIONS rule is "Graph ON/OFF savings numbers before any % is used anywhere", and no graph ON/OFF benchmark exists yet. The only measured cost number used is prompt caching −37% per task (internal A/B, 2026-11-18, 3 tasks per mode), on the Benchmarks page with its limits.
 - Pricing shown as current (no "planned" banner). Paid plans: ad-free + promotion coupon; Pro+ custom domain; Launch/Scale Launchpad days + Android builds (from platform DECISIONS/ADS_LAUNCHPAD).
 - Design: hero builder mockup, gradient icon tiles, dark "code graph" band.
+
+## Temporary address protection (2026-11-20)
+- Until the real domain is live: `X-Robots-Tag: noindex` on every response (appended to `dist/_headers` at build when `site.prelaunch`), plus the noindex meta. robots.txt **allows** crawling in pre-launch (a `Disallow` would hide the noindex from search engines).
+- Canonical, sitemap, OG and JSON-LD URLs come only from `site.domain`; they switch to the real domain with that one change.
