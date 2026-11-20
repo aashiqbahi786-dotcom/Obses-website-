@@ -85,6 +85,7 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.015em; }
 .skip-link { position: absolute; left: -9999px; }
 .skip-link:focus { left: 16px; top: 8px; z-index: 100; background: var(--bg); padding: 8px 12px; }
 
+.icon-tile { background: linear-gradient(135deg, var(--accent), var(--accent-hover)); box-shadow: 0 6px 16px -8px var(--accent); }
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .chev { transform: rotate(180deg); }

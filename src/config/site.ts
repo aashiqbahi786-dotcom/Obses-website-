@@ -22,6 +22,12 @@ export const site = {
   status: 'Invite-only Alpha',
   /** True while domain/email above are placeholders. */
   placeholders: true,
+  /**
+   * Pre-launch: the site is built ahead of the product launch (founder 2026-11-20).
+   * While true, every page is `noindex` and robots.txt blocks crawlers.
+   * Set to false on launch day, together with the real domain.
+   */
+  prelaunch: true,
 } as const;
 
 export const nav = [

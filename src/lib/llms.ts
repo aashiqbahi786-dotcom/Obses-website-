@@ -20,7 +20,7 @@ export async function buildLlmsTxt(full: boolean): Promise<string> {
     `> ${site.name} is an AI builder with five products: website builder, web app builder (React), mobile app builder (Android, React Native + Expo), AI agent builder and 3D scroll animation website builder. A person describes an idea in plain words (English, Hinglish, Hindi, Banglish) and ${site.name} builds, checks, previews and publishes it. Status: ${site.status}.`,
     '',
   );
-  out.push('Facts on this site follow strict rules: features marked "Coming soon" are not available; numbers come only from dated internal evals; competitor facts are sourced and dated or shown as "—".', '');
+  out.push('Numbers on this site come only from dated internal evals; competitor facts are sourced and dated or shown as "—".', '');
 
   out.push('## Main pages', '');
   for (const p of Object.values(staticPages)) out.push(`- [${p.label}](${abs(p.path)}): ${p.description}`);
@@ -31,7 +31,7 @@ export async function buildLlmsTxt(full: boolean): Promise<string> {
     out.push(`- [${p.data.name}](${abs(`/${p.id}`)})${p.data.status === 'coming-soon' ? ' (coming soon)' : ''}: ${full ? p.data.answer : p.data.tagline}`);
   out.push('');
 
-  out.push('## Features available now', '');
+  out.push('## Features', '');
   for (const f of features.filter((x) => x.data.status === 'available'))
     out.push(`- [${f.data.shortTitle}](${abs(`/features/${f.id}`)}): ${full ? f.data.answer : f.data.summary}`);
   out.push('', '## Coming soon (not available yet)', '');
@@ -57,9 +57,9 @@ export async function buildLlmsTxt(full: boolean): Promise<string> {
   out.push('');
 
   if (full) {
-    out.push('## Planned pricing (not live)', '');
+    out.push('## Pricing', '');
     out.push(
-      'Free $0 (5 credits a day, up to 30 a month, "Built with Obsess" badge); Starter $9 (36 credits a month + 10 bonus); Pro $19 (76 + 10 bonus, custom domain — coming soon); Launch $39 (156 + 10 bonus, Launchpad 7 days and Android builds — coming soon); Scale $59 (236 + 10 bonus, Launchpad 14 days and Android builds — coming soon). One credit ≈ $0.25 of value; a task costs at least 0.5 credit, rounded up in 0.5 steps, at most 60. Paid plans open with the private beta.',
+      'Free $0 (5 credits a day, up to 30 a month, "Built with Obsess" badge); Starter $9 (36 credits a month + 10 bonus); Pro $19 (76 + 10 bonus, custom domain); Launch $39 (156 + 10 bonus, Launchpad 7 days, Android builds); Scale $59 (236 + 10 bonus, Launchpad 14 days, Android builds). All paid plans are ad-free and include a promotion coupon. One credit ≈ $0.25 of value; a task costs at least 0.5 credit, rounded up in 0.5 steps, at most 60.',
       '',
     );
     out.push('## FAQ', '');

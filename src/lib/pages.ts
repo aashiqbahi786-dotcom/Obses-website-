@@ -34,7 +34,7 @@ export const staticPages = {
     label: 'Features',
     title: 'Features — Everything Obsess Can Do, and What Is Next',
     description:
-      'All Obsess features: Brainstorm and Build, photo, voice and PDF input, preview, Fix with AI, publishing, security scan, plus what is coming soon.',
+      'All Obsess features: build, preview, Fix with AI, publish, custom domains, backends, export, Launchpad showcase, free ads promotion and the code graph.',
   },
   useCases: {
     path: '/use-cases',
@@ -46,9 +46,9 @@ export const staticPages = {
   why: {
     path: '/why-obsess',
     label: 'Why Obsess',
-    title: 'Why Obsess — 7 Ways It Is Different',
+    title: 'Why Obsess — 8 Ways It Is Different',
     description:
-      'Built for non-coders in their own language, phone-first, five products in one place, honest checks and clear cost. Plus what is on the roadmap.',
+      'Built for non-coders in their own language, phone-first, five products in one place, honest checks, clear cost, ownership and launch support.',
   },
   compare: {
     path: '/compare',
@@ -67,9 +67,9 @@ export const staticPages = {
   pricing: {
     path: '/pricing',
     label: 'Pricing',
-    title: 'Pricing — Planned Obsess Plans and Credits',
+    title: 'Pricing — Obsess Plans and Credits',
     description:
-      'Planned Obsess pricing: Free, Starter, Pro, Launch and Scale plans and how credits work. Paid plans open with the private beta.',
+      'Obsess pricing: Free, Starter, Pro, Launch and Scale plans, how credits work, and what each plan includes — from ad-free building to Launchpad.',
   },
   about: {
     path: '/about',

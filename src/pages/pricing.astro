@@ -2,7 +2,6 @@
 import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Badge from '../components/Badge.astro';
 import Icon from '../components/Icon.astro';
 import Faq from '../components/Faq.astro';
 import Cta from '../components/Cta.astro';
@@ -11,32 +10,29 @@ import { faqPage } from '../lib/schema';
 
 const meta = staticPages.pricing;
 const faq = (await getEntry('faq', 'pricing'))!.data.items;
-type Item = { text: string; soon?: boolean };
+type Item = { text: string };
 const plans: { name: string; price: string; credits: string; items: Item[]; highlight?: boolean }[] = [
-  { name: 'Free', price: '$0', credits: '5 credits a day, up to 30 a month', items: [{ text: '“Built with Obsess” badge' }] },
-  { name: 'Starter', price: '$9', credits: '36 credits a month + 10 bonus', items: [] },
-  { name: 'Pro', price: '$19', credits: '76 credits a month + 10 bonus', items: [{ text: 'Custom domain', soon: true }], highlight: true },
+  { name: 'Free', price: '$0', credits: '5 credits a day, up to 30 a month', items: [{ text: 'Free address for published apps' }, { text: '“Built with Obsess” badge' }, { text: 'Shows promoted cards' }] },
+  { name: 'Starter', price: '$9', credits: '36 credits a month + 10 bonus', items: [{ text: 'Ad-free' }, { text: 'Promotion coupon' }] },
+  { name: 'Pro', price: '$19', credits: '76 credits a month + 10 bonus', items: [{ text: 'Ad-free' }, { text: 'Promotion coupon' }, { text: 'Custom domain' }], highlight: true },
   {
     name: 'Launch', price: '$39', credits: '156 credits a month + 10 bonus',
-    items: [{ text: 'Custom domain', soon: true }, { text: 'Launchpad, 7 days', soon: true }, { text: 'Android builds', soon: true }],
+    items: [{ text: 'Everything in Pro' }, { text: 'Launchpad showcase, 7 days' }, { text: 'Android builds' }],
   },
   {
     name: 'Scale', price: '$59', credits: '236 credits a month + 10 bonus',
-    items: [{ text: 'Custom domain', soon: true }, { text: 'Launchpad, 14 days', soon: true }, { text: 'Android builds', soon: true }],
+    items: [{ text: 'Everything in Pro' }, { text: 'Launchpad showcase, 14 days' }, { text: 'Android builds' }],
   },
 ];
 ---
 <Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]} schema={[faqPage(faq)]}>
   <PageHeader
-    title="Obsess pricing (planned)"
-    answer="Obsess plans five plans: Free, Starter at $9, Pro at $19, Launch at $39 and Scale at $59 a month. You pay with credits, by task size, and see an estimate before every task. This pricing is planned, not live: Obsess is in invite-only Alpha, and paid plans open with the private beta."
+    title="Obsess pricing"
+    answer="Obsess has five plans: Free, Starter at $9, Pro at $19, Launch at $39 and Scale at $59 a month. You pay with credits, by task size, and see an estimate before every task. Paid plans are ad-free and include a promotion coupon; Launch and Scale add Launchpad showcase days."
   />
-  <div class="container-x">
-    <p role="note" class="rounded-md bg-warn-soft px-4 py-3 text-sm text-warn-text"><strong>Planned pricing.</strong> Paid plans open with the private beta. Plans and credit amounts may change before launch.</p>
-  </div>
 
   <section class="container-x py-8" aria-labelledby="plans">
-    <h2 id="plans" class="text-2xl font-bold">Which plans are planned?</h2>
+    <h2 id="plans" class="text-2xl font-bold">Which plan is right for me?</h2>
     <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {plans.map((p) => (
         <li class:list={['flex flex-col rounded-md border p-5', p.highlight ? 'border-accent' : 'border-line']}>
@@ -46,7 +42,7 @@ const plans: { name: string; price: string; credits: string; items: Item[]; high
           {p.items.length > 0 && (
             <ul class="mt-4 space-y-2 text-sm">
               {p.items.map((i) => (
-                <li class="flex flex-wrap items-center gap-2"><span class="text-accent"><Icon name="check" size={16} /></span>{i.text}{i.soon && <Badge />}</li>
+                <li class="flex flex-wrap items-center gap-2"><span class="text-accent"><Icon name="check" size={16} /></span>{i.text}</li>
               ))}
             </ul>
           )}

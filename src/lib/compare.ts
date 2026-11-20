@@ -15,24 +15,28 @@ export const criteria = [
   { id: 'backend', label: 'Built-in database and login' },
   { id: 'export', label: 'Code export or GitHub sync' },
   { id: 'visual-editor', label: 'Visual (click-to-edit) editor' },
+  { id: 'launchpad', label: 'Showcase and early-user feedback' },
+  { id: 'promotion', label: 'Free ads promotion for your app' },
 ] as const;
 
 export type CriterionId = (typeof criteria)[number]['id'];
 
 export const obsessColumn: Record<CriterionId, { value: CellValue; note?: string }> = {
   'chat-build': { value: 'yes' },
-  android: { value: 'yes', note: 'Build and phone-frame preview; APK and Play Store coming soon' },
+  android: { value: 'yes', note: 'Phone-frame preview, APK and Google Play' },
   agents: { value: 'yes' },
   '3d-websites': { value: 'yes' },
   'live-preview': { value: 'yes' },
   'indic-languages': { value: 'yes' },
   'cost-estimate': { value: 'yes' },
   'security-scan': { value: 'yes' },
-  'free-plan': { value: 'coming-soon', note: 'Planned; Obsess is in invite-only Alpha' },
-  'custom-domain': { value: 'coming-soon' },
-  backend: { value: 'coming-soon' },
-  export: { value: 'coming-soon' },
-  'visual-editor': { value: 'coming-soon' },
+  'free-plan': { value: 'yes', note: '5 credits a day' },
+  'custom-domain': { value: 'yes', note: 'Pro plan and above' },
+  backend: { value: 'yes' },
+  export: { value: 'yes', note: 'Zip and GitHub' },
+  'visual-editor': { value: 'yes' },
+  launchpad: { value: 'yes', note: 'Showcase, reviews, early users' },
+  promotion: { value: 'yes', note: 'Promotion coupon on paid plans' },
 };
 
 export const valueLabel: Record<CellValue, string> = {

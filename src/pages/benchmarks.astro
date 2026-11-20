@@ -23,7 +23,7 @@ const faq = (await getEntry('faq', 'benchmarks'))!.data.items;
       <li><strong>Prompts:</strong> 10 real first requests in Hinglish, English, Hindi and Banglish, each run 3 times.</li>
       <li><strong>Model:</strong> Claude Sonnet 5.5.</li>
       <li><strong>Grader:</strong> each app is opened in a real browser and checked by what it shows and does against its list of requirements. We validated the grader by breaking six apps on purpose.</li>
-      <li><strong>Sample size:</strong> 30 Android apps (102 requirements), 10 preview runs, 16 publishes.</li>
+      <li><strong>Sample size:</strong> 30 Android apps (102 requirements), 10 preview runs, 16 publishes; caching A/B on 3 tasks per mode.</li>
     </ul>
   </section>
 

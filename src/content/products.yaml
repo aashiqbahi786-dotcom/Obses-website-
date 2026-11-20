@@ -75,7 +75,7 @@ mobile-app-builder:
   metaTitle: Mobile App Builder — Android Apps Without Coding
   description: Describe an Android app in your own words and see it running in a phone-frame preview. Obsess builds it with React Native and Expo.
   icon: smartphone
-  tagline: Android apps with a phone-frame preview. iOS later.
+  tagline: Android apps with a phone-frame preview, APK and Play Store.
   answer: >-
     Obsess builds Android apps from a plain description, without coding. You describe the app in
     your own language, and the AI builds it with React Native and Expo and shows it running in a
@@ -84,6 +84,8 @@ mobile-app-builder:
   gets:
     - Android apps built with React Native and Expo
     - Phone-frame preview inside the builder
+    - Installable APK and Google Play publishing
+    - Over-the-air updates for small changes
     - Requests in Hinglish, Hindi, Banglish or English
   sections:
     - q: Can I build an Android app without coding?
@@ -91,13 +93,13 @@ mobile-app-builder:
     - q: How fast do I see the app?
       a: In our internal eval (10 requests, 2026-11-19), the Android preview was running within 3 minutes in 10 of 10 cases, with a median of 25.6 seconds. See Benchmarks for the method and limits.
     - q: Does it make iPhone apps?
-      a: Not yet. Obsess builds Android apps today; iOS comes later.
+      a: Obsess builds Android apps. For iPhone users, the same idea can also be built as a web app that works in any phone browser.
   promptHinglish: College attendance ke liye ek Android app banao — student list aur present/absent button.
   promptEnglish: Build an Android app for college attendance with a student list and present/absent buttons.
   features: [android-apk-play-store-publishing, live-preview-version-history-undo, photo-to-app, brainstorm-and-build-modes]
   faq:
     - q: Can I put the app on the Play Store?
-      a: APK download and Play Store publishing are coming soon.
+      a: Yes. Download an APK to share, or publish an AAB to Google Play through your own developer account.
     - q: Do I need an Android phone?
       a: No. The preview runs in a phone frame inside the builder.
 

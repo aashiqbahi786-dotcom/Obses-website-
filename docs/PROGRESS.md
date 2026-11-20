@@ -36,7 +36,14 @@ _Last updated: 2026-11-20_
 - Verified live: all product/feature/compare pages 200, old feature URL 301 → product page, 404 page, robots/llms/sitemap/OG/favicon served, security headers present.
 - Lighthouse mobile on the live URL: 100 / 100 / 100 / 100 on 9 key pages (`reports/lighthouse.md`).
 
+## No-"Coming soon" + launch & grow (2026-11-20)
+- All features shown as available (founder). Pre-launch `noindex` switch on until launch day.
+- New: Launchpad, Free ads promotion, Smart code graph pages; home growth + code-graph sections; hero mockup; pricing as current.
+- 53 pages; all checks pass; Lighthouse mobile 100 on 9 key pages (local; `is-crawlable` skipped in pre-launch).
+
 ## Pending
+- **Launch day:** set `prelaunch: false` and the real domain/email in `src/config/site.ts`.
+- **Graph savings %:** run Graph ON/OFF benchmark in the platform; publish the result on /benchmarks only after that.
 - `main` branch created (2026-11-20) for Cloudflare Pages. Founder chose to keep all 5 products "available" (incl. 3D and Agent builder).
 - **Competitor facts (done 2026-11-20):** official pages of Lovable, Bolt.new, Replit, v0 and Emergent fetched and saved as evidence in `reports/competitors/<id>/2026-11-20/`; 32 table cells and 10 "where they are stronger" notes filled, each with source + date. Unclear facts stay "—". **Dora AI:** dora.run unreachable, all cells "—". Refresh with `NODE_USE_ENV_PROXY=1 node scripts/fetch-competitor-pages.mjs`.
 - Hindi pages with `hreflang` (phase 2, planned only).

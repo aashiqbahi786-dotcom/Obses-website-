@@ -47,6 +47,21 @@ export const benchmarkRuns = [
       'Internal tests run by the Obsess team, not independent.',
     ],
   },
+  {
+    date: '2026-11-18',
+    model: 'Claude Sonnet 5.5',
+    label: 'internal eval',
+    results: [
+      {
+        id: 'prompt-cache-cost',
+        headline: '−37%',
+        title: 'Cost per task with prompt caching',
+        detail:
+          'A/B test: the same 3 tasks (pricing page, to-do app, bakery menu in Banglish) with and without caching. Average cost per task fell from $0.0524 to $0.0328; all 3 tasks were solved in both modes.',
+      },
+    ],
+    limits: ['Very small sample (3 tasks per mode) — directional only.', 'One model, via one provider route.', 'Measures prompt caching, not the code graph.'],
+  },
 ] as const;
 
 export const latestRun = benchmarkRuns[0];

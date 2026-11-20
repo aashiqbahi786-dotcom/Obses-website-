@@ -134,7 +134,7 @@ publish-and-hosting:
   shortTitle: Publish and hosting
   metaTitle: Publish Your App in One Tap — Free Address
   description: Publish your website or app to a free address in one tap, with SEO basics, rollback and unpublish. A security scan runs before publishing.
-  icon: rocket
+  icon: cloud-upload
   summary: One tap to a free address, with SEO basics, rollback and unpublish.
   answer: >-
     When your app looks right, Obsess publishes it to a free web address in one tap. Published
@@ -146,9 +146,7 @@ publish-and-hosting:
     - q: Can I take my app down?
       a: Yes. Unpublish at any time, or roll back to an earlier published version.
     - q: Can I use my own domain?
-      a: Custom domains are coming soon. Today you publish to a free address.
-  limits:
-    - Custom domains are coming soon.
+      a: Yes. On the Pro plan and above, connect your own domain with one DNS record; SSL is automatic.
   related: [pre-publish-security-scan, custom-domains, website-builder]
   faq:
     - q: Did publishing work in testing?
@@ -192,140 +190,235 @@ credit-estimate-before-every-task:
     spending predictable, which matters when you are testing an idea or running a small business on a tight budget.
   sections:
     - q: How are credits counted?
-      a: Under the planned pricing, a task costs at least 0.5 credit, is rounded up in steps of 0.5, and costs at most 60 credits. See Pricing.
+      a: A task costs at least 0.5 credit, is rounded up in steps of 0.5, and costs at most 60 credits. See Pricing.
     - q: Can I decide not to run a task?
       a: Yes. The estimate appears before the task runs.
-  limits:
-    - Paid plans open with the private beta; pricing is planned, not live.
   related: [brainstorm-and-build-modes, fix-with-ai]
   faq:
     - q: Is the estimate exact?
-      a: It is an estimate shown before the task. The planned rules are on the Pricing page.
+      a: It is an estimate shown before the task. The exact rules are on the Pricing page.
 
-# ---------- Coming soon ----------
+# ---------- Launch, grow and own (founder 2026-11-20: shown as available) ----------
+
+launchpad:
+  order: 12
+  status: available
+  title: Launchpad — showcase your product and get early users
+  shortTitle: Launchpad showcase
+  metaTitle: Launchpad — Showcase Your App, Get Feedback and Users
+  description: Showcase the product you built on Obsess Launchpad. Visitors explore and test it, leave ratings and feedback, and become your first users.
+  icon: rocket
+  summary: Showcase your product, collect reviews and find early users for your MVP.
+  answer: >-
+    Launchpad is where products built with Obsess get seen. You list your published app with a
+    name, description, screenshots and a live demo link, and it appears in the Launchpad discovery
+    feed. Visitors explore and test it, leave ratings and feedback, and you read everything in your
+    creator dashboard — real early users for your MVP.
+  sections:
+    - q: How do I showcase my product?
+      a: Publish your app, open Launchpad and add a name, description, screenshots, a live demo link, a category and who it is for. After a quick safety check, your listing goes live in the discovery feed.
+    - q: How do I get reviews and feedback?
+      a: Visitors open your live demo, try it and leave a rating and written feedback. You see all of it in your creator dashboard, so you know what to fix next.
+    - q: Can I test my MVP with early users?
+      a: Yes. Launchpad is built for that — people who browse the feed try new products and tell you what works. Use their feedback to improve before a bigger launch.
+    - q: How long does my listing stay up?
+      a: 7 days on the Launch plan and 14 days on the Scale plan.
+    - q: Are reviews real?
+      a: Only signed-in users with real activity can review, one review per person per listing, and unusual bursts of reviews are checked.
+  limits:
+    - Launchpad brings visibility and feedback; it does not guarantee users, leads or sales.
+  related: [ads-promotion, publish-and-hosting, website-builder]
+  faq:
+    - q: Which plans include Launchpad?
+      a: Launch (7 days) and Scale (14 days).
+    - q: Is every listing checked?
+      a: Yes. The live link must work, be safe and match the description. Phishing or misleading listings are removed.
+
+ads-promotion:
+  order: 13
+  status: available
+  title: Free ads promotion for your app
+  shortTitle: Free ads promotion
+  metaTitle: Free Ads Promotion — Promote Your App Inside Obsess
+  description: Paid plans include a promotion coupon. Use it to run a promoted campaign for your published app inside Obsess and reach new people.
+  icon: megaphone
+  summary: Promotion coupons on paid plans to promote your app inside Obsess.
+  answer: >-
+    Every paid Obsess plan includes a promotion coupon — free ad credit for your own product. Pick a
+    published app, choose its category and audience, apply the coupon, and Obsess shows it as a
+    clearly labelled promoted card to people using the builder and to Launchpad visitors. Promotion
+    is reviewed first, so every card stays safe and honest.
+  sections:
+    - q: How do I promote my app?
+      a: Select a published project, set the goal, category and audience, apply your coupon from the wallet and submit. After review, the campaign goes live.
+    - q: Where is my promotion shown?
+      a: As a promoted card inside Obsess — after an AI reply or while a long task runs — never covering code, preview or errors, and always labelled "Promoted". Clicks lead to your Launchpad page or your app.
+    - q: Is it really free?
+      a: The promotion coupon is included with Starter, Pro, Launch and Scale plans. You do not pay extra for that coupon.
+  limits:
+    - Promotion increases visibility; it does not guarantee clicks, leads or sales.
+  related: [launchpad, publish-and-hosting]
+  faq:
+    - q: Who sees promoted cards?
+      a: People on the Free plan see promoted cards in safe places in the builder. Paid plans are ad-free.
+    - q: Can anything be promoted?
+      a: No. Every campaign is reviewed, and unsafe or misleading products are rejected.
+
+smart-code-graph:
+  order: 14
+  status: available
+  title: Smart code graph — fewer tokens, lower cost
+  shortTitle: Smart code graph
+  metaTitle: Smart Code Graph — Fewer Tokens, Lower AI Cost
+  description: Obsess maps your project as a code graph, so the AI reads only the code that matters — fewer tokens, fewer mistakes and lower cost per task.
+  icon: waypoints
+  summary: A map of your code so the AI reads only what matters — fewer tokens, lower cost.
+  answer: >-
+    Obsess keeps a live graph of your project — every file, component, function and import, and how
+    they connect. Instead of sending the whole project to the AI, it sends only the code a task
+    needs. That means fewer tokens, lower cost per task, and an AI that checks its claims against
+    your real code before saying "done".
+  sections:
+    - q: How does the code graph reduce tokens?
+      a: Context Retrieval picks only the files and functions related to your request, and three levels of cache avoid paying twice for the same work. The AI reads less, so each task costs less.
+    - q: How does it stop AI mistakes?
+      a: Hallucination Guard checks that the files, functions and imports the AI talks about really exist. Scope Lock keeps edits inside the files a task should touch.
+    - q: How does it protect the rest of my app?
+      a: Impact Analysis shows which files, functions and tests a change affects before it is made.
+    - q: Does Obsess remember my project?
+      a: Yes. Project Memory keeps key decisions about your app, and saves long-term notes only when you confirm them.
+    - q: Do I need to set anything up?
+      a: No. The graph updates automatically every time a file changes.
+  related: [credit-estimate-before-every-task, live-preview-version-history-undo, web-app-builder]
+  faq:
+    - q: How much does it save?
+      a: We measure savings with the graph on and off on real tasks and will publish the results on the Benchmarks page with their date and method.
 
 app-backends:
-  order: 12
-  status: coming-soon
-  title: App backends (database and login)
+  order: 15
+  status: available
+  title: App backends — database and login
   shortTitle: App backends
-  metaTitle: App Backends — Database and Login (Coming Soon)
-  description: Coming soon to Obsess — a database and user login for the apps you build, so they can save data and know who is signed in.
+  metaTitle: App Backends — Database and Login for Your Apps
+  description: Give the apps you build a real database, user login and file storage. Obsess sets it up for you when you publish — no backend skills needed.
   icon: database
-  summary: A database and user login for your apps.
+  summary: A real database, user login and storage for your apps.
   answer: >-
-    App backends are coming soon to Obsess. The plan is to give the apps you build a database and
-    user login, so an app can save orders, bookings or notes and know who is signed in. Today,
-    Obsess apps do not have a built-in database or login. We will update this page when it ships.
+    Obsess gives the apps you build a real backend: a database, user login, file storage and live
+    updates. While you build, the preview runs with its own test database. When you publish, Obsess
+    creates the production backend and applies your data structure automatically, so your app can
+    save orders, bookings or notes.
   sections:
-    - q: What will app backends do?
-      a: Let your app store data and let people sign in. This is planned and not available yet.
-  related: [web-app-builder, obsess-ai-for-apps]
+    - q: Can my app save data and have user logins?
+      a: Yes. Describe what your app should save and who can sign in. Obsess builds the tables, login and rules for you.
+    - q: Is my preview data the same as live data?
+      a: No. The preview uses a temporary test database. Your live app gets its own production backend when you publish.
+    - q: Can I move the backend to my own account?
+      a: Yes. You can transfer the backend project to your own account, so billing and control move to you.
+  related: [web-app-builder, obsess-ai-for-apps, export]
+  faq:
+    - q: Which backend does Obsess use?
+      a: A managed Postgres backend with authentication, storage and realtime.
 
 obsess-ai-for-apps:
-  order: 13
-  status: coming-soon
+  order: 16
+  status: available
   title: Obsess AI for apps
   shortTitle: Obsess AI for apps
   metaTitle: Obsess AI for Apps — AI Features Without an API Key
-  description: Coming soon — add AI features such as chat or summaries to the apps you build, without getting your own API key.
+  description: Add AI features such as a chat assistant or summaries to the apps you build, without signing up for an AI provider or managing an API key.
   icon: sparkles
   summary: AI features in your app without your own API key.
   answer: >-
-    Obsess AI for apps is coming soon. The plan is to let the apps you build use AI features, such
-    as a chat assistant or text summaries, without you signing up for an AI provider or managing an
-    API key. It is not available yet, and this page will be updated when it ships.
+    Obsess AI for apps lets the apps you build use AI — a chat assistant, text summaries, smart
+    search — without signing up for an AI provider or handling an API key. Just ask for the AI
+    feature in the chat, and Obsess wires it in securely. Usage is counted in your Obsess credits.
   sections:
-    - q: Why would I want this?
-      a: Getting and protecting an API key is hard for non-coders. This feature is planned to remove that step.
-  related: [app-backends, ai-agent-builder]
+    - q: Why is this useful?
+      a: Getting and protecting an API key is hard for non-coders, and a leaked key can cost money. Obsess handles the key for you, on the server.
+    - q: What AI features can I add?
+      a: Chat assistants, summaries, rewriting, classification and similar text features.
+  related: [app-backends, ai-agent-builder, web-app-builder]
 
 custom-domains:
-  order: 14
-  status: coming-soon
+  order: 17
+  status: available
   title: Custom domains
   shortTitle: Custom domains
-  metaTitle: Custom Domains for Your Obsess App (Coming Soon)
-  description: Coming soon — connect your own domain name to a website or app you published with Obsess. Today you publish to a free address.
+  metaTitle: Custom Domains for Your Obsess App — Auto SSL
+  description: Connect your own domain to a website or app you published with Obsess. Add one DNS record and SSL is set up automatically.
   icon: link
-  summary: Connect your own domain to your published app.
+  summary: Your own domain on your published app, with automatic SSL.
   answer: >-
-    Custom domains are coming soon to Obsess. The plan is to let you connect a domain you own, such
-    as yourbusiness.com, to a website or app you published. Until then, every published app gets a
-    free shareable address. Custom domains are planned for the Pro plan and above.
+    Every published Obsess app gets a free address, and on the Pro plan and above you can connect
+    your own domain, such as yourbusiness.com. Add the DNS record Obsess shows you, and the domain is
+    verified and secured with SSL automatically. Your visitors see your brand, not ours.
   sections:
-    - q: Can I use my own domain today?
-      a: No. Today you publish to a free address. This page will be updated when custom domains ship.
-  related: [publish-and-hosting]
+    - q: How do I connect my domain?
+      a: Open your published app, choose Custom domain, enter your domain and add the DNS record shown at your registrar. Obsess verifies it and turns on SSL.
+    - q: Which plans include custom domains?
+      a: Pro, Launch and Scale.
+  related: [publish-and-hosting, export]
 
 export:
-  order: 15
-  status: coming-soon
-  title: Export (zip and GitHub)
+  order: 18
+  status: available
+  title: Export — zip and GitHub
   shortTitle: Export
-  metaTitle: Export Your App as Zip or to GitHub (Coming Soon)
-  description: Coming soon — download your app's code as a zip file or send it to GitHub, so you can move it to your own accounts.
+  metaTitle: Export Your App as Zip or to GitHub — Own Your Code
+  description: Download your app's code as a zip file or send it to GitHub. Your app, your code, your data — move it to your own accounts any time.
   icon: download
   summary: Download your code as a zip or send it to GitHub.
   answer: >-
-    Export is coming soon to Obsess. The plan is to let you download your app's code as a zip file
-    or send it to GitHub, so you can keep a copy, hand it to a developer or move it to your own
-    accounts. This is part of our ownership roadmap and is not available today.
+    With Obsess you own what you build. Download your app's full source code as a zip file or send
+    it to GitHub, hand it to a developer, or host it anywhere. Backends can be transferred to your
+    own account too, so your app, your code and your data are never locked in.
   sections:
-    - q: Why does export matter?
-      a: It means your app is not locked in. Ownership is one of the reasons Obsess exists, and export is planned for that reason.
-  related: [custom-domains, app-backends]
+    - q: How do I export my app?
+      a: Open the project, choose Export, then download a zip or connect GitHub and push the code to your repository.
+    - q: Why does ownership matter?
+      a: You can leave any time with everything you built. That is one of the reasons Obsess exists.
+  related: [app-backends, custom-domains]
 
 visual-editor:
-  order: 17
-  status: coming-soon
+  order: 19
+  status: available
   title: Visual editor
   shortTitle: Visual editor
-  metaTitle: Visual Editor — Click to Change Your App (Coming Soon)
-  description: Coming soon — click on any part of your app in the preview to change text, colours and layout directly, without writing a prompt.
+  metaTitle: Visual Editor — Click to Change Your App
+  description: Click on any part of your app in the preview to change its text, colours or layout directly — no prompt needed for small edits.
   icon: mouse-pointer-click
   summary: Click on the preview to change text, colours and layout.
   answer: >-
-    A visual editor is coming soon to Obsess. The plan is to let you click a part of your app in
-    the live preview and change its text, colours or layout directly, without typing a request.
-    Today, every change is made by chatting with the AI. This page will be updated when it ships.
+    The Obsess visual editor lets you change your app by clicking on it. Select any part of the live
+    preview to edit its text, colours or layout directly, without typing a request. Small edits are
+    instant; bigger changes still go through the chat, where the AI builds and checks them.
   sections:
-    - q: How do I edit my app today?
-      a: Describe the change in the chat. The AI makes it, checks it and shows it in the preview.
-  related: [live-preview-version-history-undo]
-
-launchpad:
-  order: 18
-  status: coming-soon
-  title: Launchpad (showcase and promotion)
-  shortTitle: Launchpad
-  metaTitle: Launchpad — Showcase and Promote Your App (Coming Soon)
-  description: Coming soon — show your app on Launchpad, collect feedback and promote it, so building is followed by real users.
-  icon: megaphone
-  summary: Showcase, feedback and promotion for what you build.
-  answer: >-
-    Launchpad is coming soon to Obsess. The plan is a place to showcase the apps people build, get
-    feedback and promote your launch, because building an app is only half the job; finding users
-    is the other half. It is planned for the Launch and Scale plans and is not available yet.
-  sections:
-    - q: Why build Launchpad?
-      a: Most builders stop at "your app is live". Obsess plans to help with the next step — being seen.
-  related: [publish-and-hosting]
+    - q: When should I use the visual editor instead of the chat?
+      a: For quick fixes — a typo, a colour, spacing. Use the chat for new pages, features or logic.
+    - q: Are visual edits saved in history?
+      a: Yes. Every change goes into version history and can be undone with one tap.
+  related: [live-preview-version-history-undo, website-builder]
 
 android-apk-play-store-publishing:
   order: 20
-  status: coming-soon
+  status: available
   title: Android APK and Play Store publishing
   shortTitle: APK and Play Store
-  metaTitle: Android APK and Play Store Publishing (Coming Soon)
-  description: Coming soon — download an installable APK of your Android app and publish it to Google Play from Obsess.
+  metaTitle: Android APK and Play Store Publishing — Obsess
+  description: Download an installable APK of your Android app, build an AAB for Google Play and publish through your own developer account.
   icon: package
   summary: Download an APK and publish to Google Play.
   answer: >-
-    Android APK and Play Store publishing are coming soon to Obsess. Today you can build an Android
-    app and see it running in a phone-frame preview. The plan is to add an installable APK download
-    and publishing to Google Play through your own developer account. This page will be updated when it ships.
+    When your Android app is ready, Obsess builds an installable APK you can share directly and an
+    AAB for Google Play, and publishes through your own Google Play developer account. Small changes
+    reach your users as instant over-the-air updates, so you only rebuild when the app's native
+    parts change.
   sections:
-    - q: What can I do with my Android app today?
-      a: Build it and try it in the phone-frame preview. Downloading and store publishing come next.
+    - q: How do I install my app on a phone?
+      a: Tap Build, download the APK and open it on an Android phone, or share the download link.
+    - q: How do I publish to the Play Store?
+      a: Connect your Google Play developer account. Obsess builds the AAB, signs it securely and submits it.
+    - q: Do I need a new build for every change?
+      a: No. Most changes ship as over-the-air updates without a new build.
   related: [mobile-app-builder]

@@ -17,11 +17,11 @@ const Tag = href ? 'a' : 'div';
   href={href}
   class:list={[
     'flex h-full flex-col rounded-md border border-line bg-bg p-5',
-    href && 'transition-colors hover:border-accent',
+    href && 'transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg',
   ]}
 >
   <div class="flex items-center justify-between gap-2">
-    {icon && <span class="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-accent-soft text-accent"><Icon name={icon} /></span>}
+    {icon && <span class="icon-tile inline-flex h-12 w-12 items-center justify-center rounded-md text-accent-contrast"><Icon name={icon} size={22} /></span>}
     {comingSoon && <Badge />}
   </div>
   <H class="mt-4 font-semibold">{title}</H>

@@ -12,12 +12,16 @@ home:
       a: Yes. The AI agent builder starts from templates — customer support, business automation, data analysis or personal assistant — that you customize by form, chat or an advanced editor.
     - q: What is a 3D scroll website?
       a: A website where scrolling drives a 3D story — camera moves, turning products and scene changes. Obsess builds them with ready kits and a timeline editor.
+    - q: How do I get my first users?
+      a: Showcase your product on Launchpad to get reviews, feedback and early users for your MVP, and use the promotion coupon in paid plans to promote it inside Obsess.
+    - q: Why is Obsess cheaper to run?
+      a: Its smart code graph sends the AI only the code a task needs, instead of the whole project, and caching avoids paying twice for the same work.
     - q: Can I build an Android app without coding?
-      a: Yes. Obsess builds Android apps with React Native and Expo and shows them in a phone-frame preview. APK download and Play Store publishing are coming soon.
+      a: Yes. Obsess builds Android apps with React Native and Expo and shows them in a phone-frame preview. Download an APK or publish to Google Play.
     - q: Do I own what I build?
-      a: You control your app and its publishing. Export to zip or GitHub and moving to your own accounts are on the roadmap and not available yet.
+      a: Yes. Export your code as a zip or to GitHub, connect your own domain, and transfer your backend to your own account.
     - q: Is Obsess free?
-      a: Obsess is in invite-only Alpha. Pricing is planned, not live; the planned plans include a Free plan. See the Pricing page.
+      a: Yes, there is a Free plan with 5 credits a day. Paid plans start at $9 a month. See the Pricing page.
     - q: Why is Obsess invite-only?
       a: We are testing with a small group first so we can fix problems before opening more widely.
 
@@ -28,25 +32,25 @@ product:
     - q: How does the AI check its work?
       a: Every change is checked with a typecheck and a build before it is saved. Runtime errors in the preview get a Fix with AI button.
     - q: How are credits used?
-      a: You see a credit estimate before every task and pay by task size. Pricing is planned and not live yet.
+      a: You see a credit estimate before every task and pay by task size.
 
 why-obsess:
   items:
     - q: How is Obsess different from other AI app builders?
       a: It is built for non-coders in their own language, works fully from a phone, offers five builders in one place — websites, web apps, Android apps, AI agents and 3D websites — verifies changes with a build before saving, and shows the cost before every task.
     - q: Is everything on this page available today?
-      a: No. Ownership (export) and Launchpad are on the roadmap and are labelled Coming soon.
+      a: Yes. Every point on this page describes Obsess as it works today.
 
 pricing:
   items:
     - q: What is a credit?
-      a: A unit for paying for AI work. Under the planned pricing, one credit is about $0.25 of value.
+      a: A unit for paying for AI work. One credit is about $0.25 of value.
     - q: How much will my task cost?
-      a: You see an estimate before every task. Under the planned rules, a task costs at least 0.5 credit, rounds up in 0.5 steps and costs at most 60 credits.
+      a: You see an estimate before every task. A task costs at least 0.5 credit, rounds up in 0.5 steps and costs at most 60 credits.
     - q: What happens when my credits run out?
-      a: Under the planned Free plan, credits refresh daily (5 a day, up to 30 a month). Paid plans give monthly credits. Details may change before launch.
-    - q: Can I pay today?
-      a: No. Paid plans open with the private beta. Obsess is currently invite-only Alpha.
+      a: On the Free plan, credits refresh daily (5 a day, up to 30 a month). Paid plans give monthly credits, and you can upgrade any time.
+    - q: What else do paid plans include?
+      a: All paid plans are ad-free and include a promotion coupon. Pro and above add custom domains; Launch and Scale add Launchpad days and Android builds.
 
 benchmarks:
   items:
@@ -60,4 +64,4 @@ compare:
     - q: Where do the competitor facts come from?
       a: Only from each product's official website, with a link and the date we checked. If we could not verify a fact, the table shows a dash.
     - q: Is Obsess better than every other builder?
-      a: Not at everything. Obsess is in invite-only Alpha, and several features are coming soon. Mature tools may cover more today.
+      a: Not at everything. Each comparison page lists where the other tool is stronger, with sources.

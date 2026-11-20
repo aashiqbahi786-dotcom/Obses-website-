@@ -5,6 +5,11 @@ import { site } from '../config/site';
 const aiCrawlers = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'CCBot'];
 
 export const GET: APIRoute = () => {
+  if (site.prelaunch) {
+    return new Response('# Pre-launch: not open to crawlers yet.\nUser-agent: *\nDisallow: /\n', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    });
+  }
   const lines = [
     'User-agent: *',
     'Allow: /',

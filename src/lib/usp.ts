@@ -1,4 +1,4 @@
-/** The 7 USPs from the founder brief. `roadmap: true` → labelled Coming soon. */
+/** USPs (8). `roadmap: true` → labelled Coming soon (founder 2026-11-20: none). */
 export const usps = [
   {
     icon: 'languages',
@@ -38,21 +38,29 @@ export const usps = [
   {
     icon: 'key-round',
     title: 'Ownership',
-    text: 'Your app, your data — export and move to your own accounts.',
-    meaning: 'Planned: you will not be locked in. Export to zip or GitHub is coming soon.',
-    roadmap: true,
+    text: 'Your app, your code, your data — export to zip or GitHub and move the backend to your own account.',
+    meaning: 'You are never locked in. Leave any time with everything you built.',
+    roadmap: false,
   },
   {
     icon: 'megaphone',
     title: 'Launch, not just build',
-    text: 'Launchpad for showcase, feedback and promotion.',
-    meaning: 'Planned: help with finding your first users, not just publishing.',
-    roadmap: true,
+    text: 'Showcase on Launchpad, collect reviews and feedback, find early users for your MVP, and promote it with free ad credit.',
+    meaning: 'Building is half the job. Obsess helps with the other half — getting seen and getting users.',
+    roadmap: false,
+  },
+  {
+    icon: 'waypoints',
+    title: 'Smart code graph',
+    text: 'A live map of your code, so the AI reads only what a task needs — fewer tokens and lower cost per task.',
+    meaning: 'Your credits go further, and the AI makes fewer mistakes because it checks against your real code.',
+    roadmap: false,
   },
 ] as const;
 
 export const steps = [
   { icon: 'message-square-text', title: 'Describe', text: 'Type, speak, or attach a photo or PDF. Hinglish, Hindi, Banglish or English.' },
   { icon: 'shield-check', title: 'AI builds and checks', text: 'The AI plans and writes the app, then runs a typecheck and a build before saving.' },
-  { icon: 'rocket', title: 'Publish', text: 'Preview it, then publish to a free address in one tap.' },
+  { icon: 'cloud-upload', title: 'Publish', text: 'Preview it, then publish in one tap — free address or your own domain.' },
+  { icon: 'trending-up', title: 'Launch and grow', text: 'Showcase on Launchpad, get reviews and early users, promote it with free ad credit.' },
 ] as const;

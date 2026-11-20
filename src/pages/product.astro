@@ -46,8 +46,13 @@ const blocks = [
   },
   {
     q: 'How do credits work?',
-    a: 'You see a credit estimate before every task and pay by task size. Pricing is planned, not live; paid plans open with the private beta.',
-    links: [link('credit-estimate-before-every-task', 'Credit estimate'), { href: '/pricing', text: 'Planned pricing' }],
+    a: 'You see a credit estimate before every task and pay by task size. The smart code graph sends the AI only the code a task needs, so each task uses fewer tokens.',
+    links: [link('credit-estimate-before-every-task', 'Credit estimate'), link('smart-code-graph', 'Smart code graph'), { href: '/pricing', text: 'Pricing' }],
+  },
+  {
+    q: 'What happens after I publish?',
+    a: 'Connect your own domain, export your code, then showcase your product on Launchpad to get reviews, feedback and early users — and promote it with the free promotion coupon on paid plans.',
+    links: [link('custom-domains', 'Custom domains'), link('export', 'Export'), link('launchpad', 'Launchpad'), link('ads-promotion', 'Free ads promotion')],
   },
   {
     q: 'Can I do all of this from a phone?',

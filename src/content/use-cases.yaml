@@ -1,4 +1,4 @@
-# Use-case pages. Only claims backed by available features; roadmap items are labelled.
+# Use-case pages.
 
 restaurant:
   order: 1
@@ -21,7 +21,7 @@ restaurant:
   features: [website-builder, voice-and-pdf-input, photo-to-app, publish-and-hosting]
   faq:
     - q: Can customers order online?
-      a: Saving orders needs a database, which is coming soon under App backends. Today you can show the menu and a contact button.
+      a: Yes. With App backends your site can save orders in a real database. You can also add a call or WhatsApp button.
 
 cafe-tea:
   order: 2
@@ -64,7 +64,7 @@ eggs-farm-food:
   features: [website-builder, mobile-app-builder, publish-and-hosting]
   faq:
     - q: Can the website take orders?
-      a: Storing orders needs a database (coming soon). Today, add a call or WhatsApp button so customers can order directly.
+      a: Yes. App backends give your site a database to store orders, and you can add a call or WhatsApp button too.
 
 car-rental:
   order: 4
@@ -87,7 +87,7 @@ car-rental:
   features: [website-builder, voice-and-pdf-input, publish-and-hosting]
   faq:
     - q: Can customers book online?
-      a: Online booking needs a database (coming soon). Today, link a call or WhatsApp button for enquiries.
+      a: Yes. Use App backends to save bookings in a database, or link a call or WhatsApp button for enquiries.
 
 mobile-shop:
   order: 5
@@ -129,8 +129,8 @@ retail:
   promptEnglish: I have a clothing shop. Build a website with categories for kurtas, sarees and shirts, with prices.
   features: [website-builder, photo-to-app, live-preview-version-history-undo, publish-and-hosting]
   faq:
-    - q: Is this an online store with payments?
-      a: Not yet. Payments and saving orders need app backends, which are coming soon.
+    - q: Can customers place orders?
+      a: Yes. App backends let your site save orders, and customers can also reach you by call or WhatsApp.
 
 creators:
   order: 7
@@ -173,7 +173,7 @@ students:
   features: [brainstorm-and-build-modes, mobile-app-builder, web-app-builder]
   faq:
     - q: Can my app save attendance data?
-      a: Saving data needs a database, which is coming soon. Today the app can work on screen during a session.
+      a: Yes. App backends give your app a real database, so attendance is saved.
 
 startup-mvp:
   order: 9
@@ -193,10 +193,10 @@ startup-mvp:
     - A shareable published link
   promptHinglish: Mera idea hai — local tutors ko students se connect karna. Ek MVP web app banao jisme tutor list aur filter ho.
   promptEnglish: My idea connects local tutors with students. Build an MVP web app with a tutor list and filters.
-  features: [brainstorm-and-build-modes, web-app-builder, mobile-app-builder, credit-estimate-before-every-task]
+  features: [brainstorm-and-build-modes, web-app-builder, launchpad, ads-promotion]
   faq:
     - q: Will the MVP have user accounts?
-      a: Login and database are coming soon under App backends.
+      a: Yes. App backends add user login and a database. Then showcase it on Launchpad to get feedback from early users.
 
 agencies:
   order: 10
@@ -219,4 +219,4 @@ agencies:
   features: [website-builder, voice-and-pdf-input, photo-to-app, live-preview-version-history-undo]
   faq:
     - q: Can I hand the code to my client?
-      a: Export to zip and GitHub is coming soon.
+      a: Yes. Export the code as a zip or push it to GitHub, and transfer the backend to the client's account.

@@ -1,6 +1,6 @@
 # Lighthouse (mobile, simulated throttling) — 2026-11-20
 
-Run against `https://obses-website.aashiqbahi786.workers.dev` (local preview build). Production numbers on Cloudflare may differ.
+Run against `http://localhost:4321`. Pre-launch mode: the `is-crawlable` audit is skipped because pages are noindex on purpose.
 
 | Page | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|

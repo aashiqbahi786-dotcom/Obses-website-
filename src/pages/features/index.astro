@@ -9,24 +9,25 @@ import { staticPages } from '../../lib/pages';
 
 const meta = staticPages.features;
 const all = (await getCollection('features')).sort((a, b) => a.data.order - b.data.order);
-const available = all.filter((f) => f.data.status === 'available');
-const soon = all.filter((f) => f.data.status === 'coming-soon');
+const growIds = new Set(['launchpad', 'ads-promotion', 'app-backends', 'obsess-ai-for-apps', 'custom-domains', 'export', 'android-apk-play-store-publishing']);
+const build = all.filter((f) => !growIds.has(f.id));
+const grow = all.filter((f) => growIds.has(f.id));
 ---
 <Base title={meta.title} description={meta.description} path={meta.path} crumbs={[{ label: meta.label, path: meta.path }]}>
   <PageHeader
     title="Obsess features"
-    answer="Obsess builds websites, web apps and Android apps from a description in your own language. Every change is checked before it is saved, shown in a live preview and can be undone with one tap. Publishing is one tap, after a security scan. Features still in progress are clearly marked Coming soon."
+    answer="Obsess builds websites, web apps, Android apps, AI agents and 3D sites from a description in your own language. Every change is checked, previewed and can be undone. Then publish in one tap, add your domain and backend, export your code, showcase on Launchpad and promote your product."
   />
   <section class="container-x py-8" aria-labelledby="avail">
-    <SectionHeader id="avail" title="What can Obsess do today?" intro="Available now in the invite-only Alpha." />
+    <SectionHeader id="avail" title="How does Obsess help me build?" intro="Plan, build, check, preview and publish." />
     <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {available.map((f) => <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} /></li>)}
+      {build.map((f) => <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>)}
     </ul>
   </section>
   <section class="container-x py-8" aria-labelledby="soon">
-    <SectionHeader id="soon" title="What is coming next?" intro="Planned and in progress. Not available yet." />
+    <SectionHeader id="soon" title="How does Obsess help me launch, grow and own it?" intro="Showcase, feedback, early users, promotion, domains, backends and export." />
     <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {soon.map((f) => <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon /></li>)}
+      {grow.map((f) => <li><Card href={`/features/${f.id}`} icon={f.data.icon} title={f.data.shortTitle} text={f.data.summary} comingSoon={f.data.status === 'coming-soon'} /></li>)}
     </ul>
   </section>
   <Cta />

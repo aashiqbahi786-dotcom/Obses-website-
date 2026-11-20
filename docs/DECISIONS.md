@@ -31,3 +31,11 @@
 ## Competitor facts (2026-11-20)
 - Filled only from text saved from official pages (`reports/competitors/`), with source + date per cell. "Mobile apps" claims are noted as "Android not named" where the page does not say Android.
 - Evidence files are kept in the repo so every claim can be checked later.
+
+## No "Coming soon" + launch & grow (founder, 2026-11-20)
+- Founder: the website is built ahead of launch and will go public together with the product, so **every feature is shown as available** (no "Coming soon" anywhere). The `status` field and badge remain in code in case a feature must be flagged later.
+- **Pre-launch switch:** `site.prelaunch = true` in `src/config/site.ts` → every page `noindex` and robots.txt `Disallow: /`. Set to `false` on launch day together with the real domain. (Claude's recommendation, since the workers.dev URL is already public.)
+- Added: Launchpad (showcase, reviews and feedback, early users for MVP testing), Free ads promotion (promotion coupon on paid plans), Smart code graph feature page; home sections "How do I get my first users?" and "Why does Obsess use fewer tokens?"; USP #8.
+- **No token-saving % on the site.** Founder asked for "70%"; the platform DECISIONS rule is "Graph ON/OFF savings numbers before any % is used anywhere", and no graph ON/OFF benchmark exists yet. The only measured cost number used is prompt caching −37% per task (internal A/B, 2026-11-18, 3 tasks per mode), on the Benchmarks page with its limits.
+- Pricing shown as current (no "planned" banner). Paid plans: ad-free + promotion coupon; Pro+ custom domain; Launch/Scale Launchpad days + Android builds (from platform DECISIONS/ADS_LAUNCHPAD).
+- Design: hero builder mockup, gradient icon tiles, dark "code graph" band.
