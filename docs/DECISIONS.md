@@ -27,3 +27,7 @@
 ## Go-live prep (founder, 2026-11-20)
 - `main` created from the session branch; Cloudflare Pages production branch = `main`.
 - Founder: 3D website builder (and all 5 products) stay "available" on the site; other details to be changed later by the founder.
+
+## Competitor facts (2026-11-20)
+- Filled only from text saved from official pages (`reports/competitors/`), with source + date per cell. "Mobile apps" claims are noted as "Android not named" where the page does not say Android.
+- Evidence files are kept in the repo so every claim can be checked later.

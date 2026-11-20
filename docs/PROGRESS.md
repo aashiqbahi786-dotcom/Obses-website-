@@ -38,7 +38,7 @@ _Last updated: 2026-11-20_
 
 ## Pending
 - `main` branch created (2026-11-20) for Cloudflare Pages. Founder chose to keep all 5 products "available" (incl. 3D and Agent builder).
-- **Competitor facts:** official sites (lovable.dev, bolt.new, replit.com, v0.app, emergent.sh, dora.run) are blocked by this environment's network, so every competitor cell shows "—". Once reachable: `node scripts/fetch-competitor-pages.mjs`, then fill `src/content/compare.yaml` with source + date.
+- **Competitor facts (done 2026-11-20):** official pages of Lovable, Bolt.new, Replit, v0 and Emergent fetched and saved as evidence in `reports/competitors/<id>/2026-11-20/`; 32 table cells and 10 "where they are stronger" notes filled, each with source + date. Unclear facts stay "—". **Dora AI:** dora.run unreachable, all cells "—". Refresh with `NODE_USE_ENV_PROXY=1 node scripts/fetch-competitor-pages.mjs`.
 - Hindi pages with `hreflang` (phase 2, planned only).
 - Real invite form provider (today: opens the visitor's email app).
 - Real domain: canonical URLs, sitemap and OG links still point to the placeholder `obsess.example`; set the domain in `src/config/site.ts` before submitting to Google.

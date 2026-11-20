@@ -1,9 +1,10 @@
 # Competitor comparisons.
 # RULE: a cell other than "unknown" MUST have `source` (official URL) and `checked` (YYYY-MM-DD).
 # `npm run lint:content` fails otherwise. Unverified → leave the cell out (renders "—").
-# Status 2026-11-20: official sites could not be reached from the build environment,
-# so no competitor cell is filled yet. Run `node scripts/fetch-competitor-pages.mjs`
-# where the network allows, then fill cells from the saved pages.
+# Status 2026-11-20: filled from official pages saved in reports/competitors/<id>/2026-11-20/.
+# Only facts stated clearly on the page are filled; everything else stays "—".
+# Dora AI: dora.run could not be reached, so no cell is filled.
+# Refresh: NODE_USE_ENV_PROXY=1 node scripts/fetch-competitor-pages.mjs (proxy envs only).
 
 lovable:
   order: 1
@@ -15,8 +16,47 @@ lovable:
     This page compares Obsess and Lovable, two AI app builders, feature by feature. Obsess focuses
     on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
     Every Lovable fact in the table links to Lovable's official site with the date checked; anything not yet verified shows a dash.
-  cells: {}
-  stronger: []
+  cells:
+    chat-build:
+      value: yes
+      note: "Web apps from natural language"
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+    backend:
+      value: yes
+      note: "Frontend, backend, database and authentication"
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+    export:
+      value: yes
+      note: "Git sync to GitHub, GitLab or Bitbucket"
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+    free-plan:
+      value: yes
+      source: https://lovable.dev/pricing
+      checked: '2026-11-20'
+    custom-domain:
+      value: yes
+      note: "On paid plans"
+      source: https://lovable.dev/pricing
+      checked: '2026-11-20'
+    visual-editor:
+      value: yes
+      note: "Select elements and edit text inline in the preview"
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+    live-preview:
+      value: yes
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+  stronger:
+    - text: 'Generates full-stack web apps with backend, database and authentication, and syncs code to GitHub, GitLab or Bitbucket.'
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
+    - text: 'Lists SOC 2 Type II and ISO 27001:2022 compliance.'
+      source: https://docs.lovable.dev
+      checked: '2026-11-20'
 
 bolt-new:
   order: 2
@@ -28,8 +68,54 @@ bolt-new:
     This page compares Obsess and Bolt.new, two AI app builders, feature by feature. Obsess focuses
     on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
     Every Bolt.new fact in the table links to its official site with the date checked; anything not yet verified shows a dash.
-  cells: {}
-  stronger: []
+  cells:
+    chat-build:
+      value: yes
+      note: "Web or mobile apps from natural language prompts"
+      source: https://support.bolt.new
+      checked: '2026-11-20'
+    android:
+      value: yes
+      note: 'Says "mobile apps" via Expo; Android not named'
+      source: https://support.bolt.new
+      checked: '2026-11-20'
+    free-plan:
+      value: yes
+      note: "Daily limits"
+      source: https://bolt.new/pricing
+      checked: '2026-11-20'
+    custom-domain:
+      value: yes
+      note: "On paid plans"
+      source: https://bolt.new/pricing
+      checked: '2026-11-20'
+    backend:
+      value: yes
+      note: "Bolt Cloud: databases, user management and authentication"
+      source: https://bolt.new
+      checked: '2026-11-20'
+    export:
+      value: yes
+      note: "GitHub for version control"
+      source: https://support.bolt.new
+      checked: '2026-11-20'
+    visual-editor:
+      value: yes
+      note: '"Make visual edits"'
+      source: https://support.bolt.new
+      checked: '2026-11-20'
+    live-preview:
+      value: yes
+      note: "Preview controls"
+      source: https://support.bolt.new
+      checked: '2026-11-20'
+  stronger:
+    - text: 'Bolt Cloud includes hosting, databases, user management and authentication in one place.'
+      source: https://bolt.new
+      checked: '2026-11-20'
+    - text: 'Custom domain support and a choice of database provider on paid plans.'
+      source: https://bolt.new/pricing
+      checked: '2026-11-20'
 
 replit:
   order: 3
@@ -41,8 +127,33 @@ replit:
     This page compares Obsess and Replit, two platforms for building apps with AI, feature by
     feature. Obsess focuses on non-coders who write in Hinglish, Hindi or Banglish, phone-first
     building and Android apps. Every Replit fact links to Replit's official site with the date checked; unverified cells show a dash.
-  cells: {}
-  stronger: []
+  cells:
+    chat-build:
+      value: yes
+      note: '"Describe it. Publish it."'
+      source: https://replit.com
+      checked: '2026-11-20'
+    free-plan:
+      value: yes
+      note: '"Free Mode": create without token costs'
+      source: https://replit.com
+      checked: '2026-11-20'
+    custom-domain:
+      value: yes
+      source: https://docs.replit.com
+      checked: '2026-11-20'
+    backend:
+      value: yes
+      note: "Databases listed as a product"
+      source: https://replit.com
+      checked: '2026-11-20'
+  stronger:
+    - text: 'Custom domains and databases are available today.'
+      source: https://docs.replit.com
+      checked: '2026-11-20'
+    - text: 'Desktop app (macOS, Windows) and mobile app (iOS, Android) for using Replit itself.'
+      source: https://docs.replit.com
+      checked: '2026-11-20'
 
 v0:
   order: 4
@@ -54,8 +165,48 @@ v0:
     This page compares Obsess and v0, two AI tools for building apps and interfaces, feature by
     feature. Obsess focuses on non-coders who write in Hinglish, Hindi or Banglish, phone-first
     building and Android apps. Every v0 fact links to v0's official site with the date checked; unverified cells show a dash.
-  cells: {}
-  stronger: []
+  cells:
+    chat-build:
+      value: yes
+      note: "Full-stack web apps"
+      source: https://v0.app
+      checked: '2026-11-20'
+    free-plan:
+      value: yes
+      note: "7 messages a day"
+      source: https://v0.app/pricing
+      checked: '2026-11-20'
+    custom-domain:
+      value: yes
+      source: https://v0.app/docs
+      checked: '2026-11-20'
+    backend:
+      value: yes
+      note: "Connects to databases as it builds"
+      source: https://v0.app
+      checked: '2026-11-20'
+    export:
+      value: yes
+      note: "Sync with GitHub"
+      source: https://v0.app/pricing
+      checked: '2026-11-20'
+    visual-editor:
+      value: yes
+      note: "Design Mode"
+      source: https://v0.app/pricing
+      checked: '2026-11-20'
+    live-preview:
+      value: yes
+      note: "Real-time preview"
+      source: https://v0.app/docs
+      checked: '2026-11-20'
+  stronger:
+    - text: 'GitHub sync and visual editing with Design Mode are included on the free plan.'
+      source: https://v0.app/pricing
+      checked: '2026-11-20'
+    - text: 'An iOS app lets you build from your phone.'
+      source: https://v0.app
+      checked: '2026-11-20'
 
 emergent:
   order: 5
@@ -67,8 +218,44 @@ emergent:
     This page compares Obsess and Emergent, two AI app builders, feature by feature. Obsess focuses
     on non-coders who write in Hinglish, Hindi or Banglish, phone-first building and Android apps.
     Every Emergent fact links to Emergent's official site with the date checked; anything not yet verified shows a dash.
-  cells: {}
-  stronger: []
+  cells:
+    chat-build:
+      value: yes
+      note: "Describe your idea in simple words"
+      source: https://emergent.sh
+      checked: '2026-11-20'
+    android:
+      value: yes
+      note: 'Says "web & mobile apps" on a paid plan; Android not named'
+      source: https://emergent.sh/pricing
+      checked: '2026-11-20'
+    agents:
+      value: yes
+      note: '"AI Agent Builder"'
+      source: https://emergent.sh
+      checked: '2026-11-20'
+    free-plan:
+      value: yes
+      note: "10 free monthly credits"
+      source: https://emergent.sh/pricing
+      checked: '2026-11-20'
+    backend:
+      value: yes
+      note: "Databases and APIs set up with hosting"
+      source: https://emergent.sh
+      checked: '2026-11-20'
+    export:
+      value: yes
+      note: "GitHub integration and code download"
+      source: https://emergent.sh
+      checked: '2026-11-20'
+  stronger:
+    - text: 'States you own all the code it generates, with GitHub integration and download.'
+      source: https://emergent.sh
+      checked: '2026-11-20'
+    - text: 'Built-in hosting with databases and APIs already set up.'
+      source: https://emergent.sh
+      checked: '2026-11-20'
 
 dora-ai:
   order: 6
